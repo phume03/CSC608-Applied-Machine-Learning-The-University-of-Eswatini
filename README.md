@@ -8,7 +8,7 @@ Here we present a dive into _practical applications_ of *machine learning (ML)* 
 <details>
 <summary>
 <blockquote>"Neural networks and other forms of machine learning ultimately learn by
-trial and error, one improvement at a time" ~ John Pavlus, [Quanta Magazine (July 8, 2024)](https://www.quantamagazine.org/what-is-machine-learning-20240708/)
+trial and error, one improvement at a time" ~ John Pavlus, <a href="https://www.quantamagazine.org/what-is-machine-learning-20240708/">Quanta Magazine (July 8, 2024)]</a>
 </blockquote>
 </summary>
 <br>
