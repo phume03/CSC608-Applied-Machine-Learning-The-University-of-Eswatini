@@ -9,7 +9,9 @@ Here we present a dive into _practical applications_ of *machine learning (ML)* 
 <summary><blockquote>"Neural networks and other forms of machine learning ultimately learn by
 trial and error, one improvement at a time" ~ John Pavlus, [Quanta Magazine \(July 8, 2024\)](https://www.quantamagazine.org/what-is-machine-learning-20240708/)</blockquote></summary>
 <br>
+
 ![ML: Human Head Internals as assortment of language models](./LLMNativeLanguage-crMyriamWares-Lede.jpg)
+
 <br>
 <p>By now, many people think they know what <strong>machine learning</strong> is: You “feed” computers a bunch of “training data” so that they “learn” to do things without our having to specify exactly how. But computers aren’t dogs, data isn’t kibble, and that previous sentence has way too many air quotes. What does that stuff really mean? 
 
