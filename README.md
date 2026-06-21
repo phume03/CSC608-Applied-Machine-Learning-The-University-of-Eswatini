@@ -74,29 +74,26 @@ The Diagram's Depiction: The orange Reinforcement Learning circle overlaps heavi
 
 ### Introduction to Applied Machine Learning ###
 <details>
-<summary></summary>
+<summary>Overview of machine learning landscape: it is the science (and art) of programming computers so they can learn from data.</summary>
 <ul>
-<li>verview of machine learning landscape: is the science (and art) of programming computers so they can learn from data.
-    <ul>
-    <li>Types of learning, key concepts:
-        <table>
-        <tr><th> Key Term </th><th> Definition </th>
-        <tr><td> Online Learning </td><td></td></tr>
-        <tr><td> Offline Learning </td><td></td></tr>
-        <tr><td> Batch Learning </td><td></td></tr>
-        <tr><td> Instance-based Learning </td><td></td></tr>
-        <tr><td> Model-based Learning </td><td></td></tr>
-        <tr><td> Supervised Learning </td><td>is the most common and widely used branch of machine learning. An algorithm learns from a labeled dataset, which means every piece of training data you feed the model comes paired with the correct answer key.The goal of the algorithm is to learn the underlying mathematical mapping or relationship between the inputs ($x$) and the outputs ($y$), so that when it is given brand-new, unseen inputs, it can accurately predict the correct labels.</td></tr>
-        <tr><td> Unsupervised Learning </td><td>a branch of ML where an algorithm is fed raw, unlabeled training data. The model is left to its own devices to explore the data, find hidden structures, group similar points together, and extract meaningful patterns all on its own.</td></tr>
-        <tr><td> Semi-supervised Learning </td><td></td></tr>
-        <tr><td> Reinforcement Learning </td><td></td></tr>
-        <tr><td> Overfitting (High Variance) </td><td>the model is too complex and has essentially memorized the training data, including its random noise and outliers. It is highly sensitive to small fluctuations (variance).</td></tr>
-        <tr><td> Underfitting (High Bias) </td><td>The model is too simple to capture the underlying patterns in the data. It makes strong, erroneous assumptions (bias). Symptoms include; high error on both the training data and the testing data.</td></tr>
-        <tr><td> Regularization </td><td></td></tr>
-        <tr><td> Hyperparameter </td><td></td></tr>
-        <tr><td> Confusion Matrix </td><td></td></tr>
-        </table>
-    </li></ul>
+<li>Types of learning, key concepts:
+                <table>
+                    <tr><th> Key Term </th><th> Definition </th>
+                    <tr><td> Online Learning </td><td></td></tr>
+                    <tr><td> Offline Learning </td><td></td></tr>
+                    <tr><td> Batch Learning </td><td></td></tr>
+                    <tr><td> Instance-based Learning </td><td></td></tr>
+                    <tr><td> Model-based Learning </td><td></td></tr>
+                    <tr><td> Supervised Learning </td><td>is the most common and widely used branch of machine learning. An algorithm learns from a labeled dataset, which means every piece of training data you feed the model comes paired with the correct answer key.The goal of the algorithm is to learn the underlying mathematical mapping or relationship between the inputs ($x$) and the outputs ($y$), so that when it is given brand-new, unseen inputs, it can accurately predict the correct labels.</td></tr>
+                    <tr><td> Unsupervised Learning </td><td>a branch of ML where an algorithm is fed raw, unlabeled training data. The model is left to its own devices to explore the data, find hidden structures, group similar points together, and extract meaningful patterns all on its own.</td></tr>
+                    <tr><td> Semi-supervised Learning </td><td></td></tr>
+                    <tr><td> Reinforcement Learning </td><td></td></tr>
+                <tr><td> Overfitting (High Variance) </td><td>the model is too complex and has essentially memorized the training data, including its random noise and outliers. It is highly sensitive to small fluctuations (variance).</td></tr>
+                <tr><td> Underfitting (High Bias) </td><td>The model is too simple to capture the underlying patterns in the data. It makes strong, erroneous assumptions (bias). Symptoms include; high error on both the training data and the testing data.</td></tr>
+                <tr><td> Regularization </td><td></td></tr>
+                <tr><td> Hyperparameter </td><td></td></tr>
+                <tr><td> Confusion Matrix </td><td></td></tr>
+            </table>
 </li>
 <li>Introduction to machine learning tools and frameworks.
     <ul>
@@ -137,77 +134,122 @@ The Diagram's Depiction: The orange Reinforcement Learning circle overlaps heavi
 <summary></summary>
 
 #### Regression ####
-* Linear Regression: is one of the most fundamental, widely used algorithms in statistics and machine learning. Its primary goal is to predict a continuous numeric value by establishing a straight-line relationship between one or more independent variables (inputs) and a dependent variable (the output). Think of it as finding the "line of best fit" through a scatter plot of data points.
-* Polynomial Regression: is a form of regression analysis used when the relationship between your independent variable (input) and dependent variable (output) is non-linear (curved). It is essentially an extension of Multiple Linear Regression, but instead of drawing a straight line, it curves the line to fit data points that bend, wave, or change direction. 
-* Regularization techniques (Ridge, Lasso): when you train a machine learning model (like Linear or Polynomial Regression), it can easily become overfitted—meaning it memorizes the training data, including the random noise, and fails to predict accurately on new, unseen data. Regularization is a technique used to prevent overfitting by adding a penalty to the complex parts of the model, forcing it to keep the model weights (coefficients) small and simple.
-    * Ridge Regression adds a penalty proportional to the squared magnitude of the coefficients.
-    * Lasso stands for Least Absolute Shrinkage and Selection Operator. Instead of squaring the coefficients, Lasso adds a penalty proportional to the absolute value of the coefficients.
-* Evaluating model performance: once you have built a regression model (whether it is Linear, Polynomial, Ridge, or Lasso), you need to measure how well it actually performs. Mean Squared Error (MSE) and R-squared ($R^2$) are the two most fundamental metrics used to evaluate regression models, but they measure performance in completely different ways.
-    * Mean Squared Error (MSE): MSE measures the average squared distance between the actual observed values ($y$) and the values predicted by your model ($\hat{y}$). It tells you, on average, how far off your predictions are.
-    * R-squared: while MSE gives you an absolute error number, it doesn't tell you if that number is relatively "good" or "bad" for your specific dataset. R-squared ($R^2$) solves this by providing a relative score. It measures the proportion of variance in the dependent variable that can be explained by your model's independent variables. Essentially, it answers: How much better is my model compared to a dumb baseline model that just guesses the average value every time?
-
-    | Feature | Mean Squared Error (MSE) | R-squared (R2) | 
-    | Type of Metric | Absolute measure of error. | Relative measure of fit. |
-    | Units | Squared units of the target variable. | 0Unitless (independent of data scale). |
-    | Ideal Value | As close to 0 as possible. | As close to 1 (or 100%) as possible. |
-    | Best Used For | Comparing different variations of the same model or tracking tuning progress. | Comparing performance across entirely different datasets or problems. |
-
+<ul>
+<li>Linear Regression: is one of the most fundamental, widely used algorithms in statistics and machine learning. Its primary goal is to predict a continuous numeric value by establishing a straight-line relationship between one or more independent variables (inputs) and a dependent variable (the output). Think of it as finding the "line of best fit" through a scatter plot of data points.</li>
+<li>Polynomial Regression: is a form of regression analysis used when the relationship between your independent variable (input) and dependent variable (output) is non-linear (curved). It is essentially an extension of Multiple Linear Regression, but instead of drawing a straight line, it curves the line to fit data points that bend, wave, or change direction.</li> 
+<li>Regularization techniques (Ridge, Lasso): when you train a machine learning model (like Linear or Polynomial Regression), it can easily become overfitted—meaning it memorizes the training data, including the random noise, and fails to predict accurately on new, unseen data. Regularization is a technique used to prevent overfitting by adding a penalty to the complex parts of the model, forcing it to keep the model weights (coefficients) small and simple.
+    <ul>
+    <li>Ridge Regression adds a penalty proportional to the squared magnitude of the coefficients.</li>
+    <li>Lasso stands for Least Absolute Shrinkage and Selection Operator. Instead of squaring the coefficients, Lasso adds a penalty proportional to the absolute value of the coefficients.</li>
+    </ul>
+</li>
+<li>Evaluating model performance: once you have built a regression model (whether it is Linear, Polynomial, Ridge, or Lasso), you need to measure how well it actually performs. Mean Squared Error (MSE) and R-squared ($R^2$) are the two most fundamental metrics used to evaluate regression models, but they measure performance in completely different ways.
+    <ul>
+    <li>Mean Squared Error (MSE): MSE measures the average squared distance between the actual observed values ($y$) and the values predicted by your model ($\hat{y}$). It tells you, on average, how far off your predictions are.</li>
+    <li>R-squared: while MSE gives you an absolute error number, it doesn't tell you if that number is relatively "good" or "bad" for your specific dataset. R-squared ($R^2$) solves this by providing a relative score. It measures the proportion of variance in the dependent variable that can be explained by your model's independent variables. Essentially, it answers: How much better is my model compared to a dumb baseline model that just guesses the average value every time?</li>
+    </ul>
+    <table>
+        <tr><th> Feature </th><td> Mean Squared Error (MSE) </td><td> R-squared (R2) </td></tr>
+        <tr><th> Type of Metric </th><td> Absolute measure of error. </td><td> Relative measure of fit. </td></tr>
+        <tr><th> Units </th><td> Squared units of the target variable. </td><td> Unitless (independent of data scale). </td></tr>
+        <tr><th> Ideal Value </th><td> As close to 0 as possible. </td><td> As close to 1 (or 100%) as possible. </td></tr>
+        <tr><th> Best Used For </th><td> Comparing different variations of the same model or tracking tuning progress. </td><td> Comparing performance across entirely different datasets or problems. </td></tr>
+    </table></li>
+</ul>
 
 #### Classification ####
-* Introduction to classification algorithms: 
-    * Logistic Regression: is a fundamental statistical and machine learning algorithm used to predict the probability of a binary outcome (a variable that can only have two possible values, like Yes/No, True/False, or 0/1). Despite having "regression" in its name, it is almost exclusively used for classification tasks rather than predicting continuous numbers (like housing prices) 
-    * K-Nearest Neighbors (KNN): this is one of the simplest, most intuitive, and effective algorithms used in machine learning. It is a non-parametric, lazy learning algorithm that can be used for both classification (predicting a category) and regression (predicting a continuous value), though it is most commonly used for classification. The core philosophy of KNN is simple: "Birds of a feather flock together." It assumes that similar data points exist in close proximity to one another. 
-    * Support Vector Machines (SVM): is a powerful and versatile machine learning algorithm used primarily for classification tasks, though it can also handle regression. It's main objective is to find a boundary that separates different classes of data in the cleanest way possible.
-* Class imbalance: this occurs in classification problems when one class severely outnumbers the other class(es) in the dataset.
+<ul>
+    <li>Introduction to classification algorithms: 
+        <ul>
+            <li>Logistic Regression: is a fundamental statistical and machine learning algorithm used to predict the probability of a binary outcome (a variable that can only have two possible values, like Yes/No, True/False, or 0/1). Despite having "regression" in its name, it is almost exclusively used for classification tasks rather than predicting continuous numbers (like housing prices) </li>
+            <li>K-Nearest Neighbors (KNN): this is one of the simplest, most intuitive, and effective algorithms used in machine learning. It is a non-parametric, lazy learning algorithm that can be used for both classification (predicting a category) and regression (predicting a continuous value), though it is most commonly used for classification. The core philosophy of KNN is simple: "Birds of a feather flock together." It assumes that similar data points exist in close proximity to one another. </li>
+            <li>Support Vector Machines (SVM): is a powerful and versatile machine learning algorithm used primarily for classification tasks, though it can also handle regression. It's main objective is to find a boundary that separates different classes of data in the cleanest way possible.</li>
+        </ul>
+    </li>
+    <li>Class imbalance: this occurs in classification problems when one class severely outnumbers the other class(es) in the dataset.
 The majority class is often called the negative class, while the minority class is called the positive class (which is usually the class you actually care about detecting). For example, if 99% of your dataset consists of normal bank transactions and only 1% is fraudulent, a "dumb" machine learning model can simply guess "Normal" every single time. 
-    * The Accuracy Paradox: the useless model will achieve an incredible 99% accuracy, despite completely failing to catch a single fraudulent transaction.
-    * The Bias: Standard machine learning algorithms are designed to maximize overall accuracy. As a result, they will naturally bias themselves toward the majority class and treat the minority class as ignorable noise.
-    * Techniques to Handle Class Imbalance: to fix for class imbalance, you have to adjust your data, your algorithm, or your evaluation metrics:
-        1. Data-Level Resampling Techniques: these techniques alter the dataset before feeding it to the model to balance the class proportions.
-            * Random Undersampling: randomly removing samples from the majority class until it matches the size of the minority class. Here, you throw away potentially valuable information.
-            * Random Oversampling: randomly duplicating existing samples from the minority class. Here, it can lead to severe overfitting because the model just memorizes the exact same minority data points.
-            *Synthetic Minority Over-sampling Technique (SMOTE)): instead of duplicating existing data, SMOTE creates entirely new, synthetic data points that are statistically similar to the original minority class. 
-        2. Algorithmic-Level Techniques: instead of changing the data, you change how the algorithm learns.
-            * Class Weights (Cost-Sensitive Learning): Most modern algorithms (like Random Forests, SVMs, or Logistic Regression in scikit-learn) have a class_weight parameter. If your ratio is 1:9, you can tell the model that misclassifying a minority point is 9 times more costly than misclassifying a majority point. This forces the hyperplane or decision boundary to respect the minority class.
-            * Tree-Based Ensembles: Tree algorithms (like XGBoost or Random Forest) often handle imbalance better than linear models because they can split data into pure regional nodes, though they still require tuning if the imbalance is extreme.
-        3. Change Your Metrics (CRITICAL): never use accuracy to judge an imbalanced dataset. Instead, use metrics that focus heavily on the minority class:
-            * Precision: Out of all the points the model predicted as positive, how many were actually positive? (Minimizes False Positives).
-            * Recall (Sensitivity): Out of all the actual positive points, how many did the model manage to find? (Minimizes False Negatives).
-            * F1-Score: The harmonic mean of Precision and Recall, giving you a balanced view of how the model is performing on the minority class.
-            * ROC-AUC: Measures how well the model separates the two classes across various threshold levels.
-    * Note (NB): A common pitfall is the data leakage trap! When using SMOTE or any oversampling technique, you must only apply it to your Training data. If you apply SMOTE to your entire dataset before splitting it into training and testing sets, synthetic data created from the test set will leak into the training set. This will result in fake, artificially inflated performance scores during evaluation.
-* Performance metrics: in machine learning, performance metrics are quantitative measurements used to evaluate how well an algorithm is performing. They act as a scorecard for your model, telling you how close the model's predictions are to the actual truth. Choosing the right performance metric is critical because a model that looks perfect under one metric might be completely useless under another. For example, when evaluating classification models, looking at a single number like _overall accuracy_ can be deeply misleading (especially with imbalanced data). To truly understand your model's strengths and weaknesses, you need a suite of metrics built around the Confusion Matrix. As different ML tasks have different goals, performance metrics are divided by the type of problem you are solving. 
-    1. Classification Metrics (Predicting Categories): classification models predict labels or categories (e.g., "Spam" vs. "Not Spam", or "Cat" vs. "Dog"). Most classification metrics are derived from a matrix called the Confusion Matrix.
-        * Accuracy: this is the percentage of total predictions that the model got exactly right (both positive and negative). It works well only if your dataset is balanced.
-        * Precision: this focuses on minimizing false alarms. Out of everything the model guessed was positive, how many were actually correct?
-        * Recall (Sensitivity): this focuses on minimizing missed cases. Out of all the actual positive cases out there, how many did the model manage to find?
-        * F1-Score: this is the harmonic mean of Precision and Recall. It gives you a single balanced score, making it the go-to metric for imbalanced datasets.
-        * ROC-AUC: this measures the model's ability to distinguish between classes across all possible decision thresholds. An AUC of 1.0 means perfect separation.
-    2. Regression Metrics (Predicting Continuous Numbers): regression models predict continuous numeric values (e.g., predicting a house price, tomorrow's temperature, or stock market values). Instead of looking at "right or wrong," these metrics measure the size of the error (residual) between the prediction and reality.
-        * Mean Absolute Error (MAE): the average of the absolute differences between actual values and predicted values. It treats all errors equally and is highly intuitive (e.g., "On average, our house price predictions are off by $5,000").
-        * Mean Squared Error (MSE): The average of the squared differences between predictions and actual values. Because it squares the errors, it severely penalizes large mistakes or outliers.
-        * Root Mean Squared Error (RMSE): the square root of MSE. This brings the error metric back into the original units of your target data, making it easier to interpret while keeping the penalty for large errors.
-        * R-squared ($R^2$): also known as the coefficient of determination. It measures what percentage of the variance in the data your model explains. It scales from 0 to 1 (or 0% to 100%), allowing you to see how much better your model is than a baseline that just guesses the average value every time.
-    3. Unsupervised Metrics (Clustering): in unsupervised learning (like K-Means clustering), there are no "true labels" to compare predictions against. Instead, performance metrics evaluate how cleanly the data has been grouped.
-        * Silhouette Score: Measures how close a data point is to its own cluster compared to how far away it is from other clusters. It ranges from -1 to +1. A high score means clusters are dense and well-separated.
-        * Inertia (Within-Cluster Sum of Squares): Measures how internally tight the individual clusters are. Lower inertia means data points inside the same cluster are very close to each other.
-        * Davies-Bouldin Index: Evaluates the separation between clusters. A lower score signifies better clustering, meaning clusters are tightly packed and far apart from each other.
-* Case study \- classifying customer churn or sentiment analysis: in the real-world business scenarios, companies don't just want to predict if a customer will leave (classification); they also want to look at the text from customer reviews, support tickets, or surveys using Natural Language Processing (NLP) to understand why they are unhappy (sentiment analysis).Here are a few notable instances and open-source implementations of this exact type of case study:
-    1. Kaggle End-to-End Projects: Kaggle hosts real and synthetic datasets where data scientists build portfolios around this hybrid problem.  
-        * A prominent example is the [Kaggle Customer Churn, Uplift, and Feedback Dataset](https://www.kaggle.com/datasets/harrachimustapha/customer-churn-uplift-and-feedback-dataset). This project explicitly instructs users to apply classification models (like Logistic Regression and tree-based ensembles) alongside NLP techniques to analyze synthetic customer text reviews and predict churn based on sentiment indicators.  
-    2. Academic and Industry Research Papers: Organizations regularly publish methodologies detailing how they merge text sentiment with traditional quantitative features (like usage data or billing amounts) to maximize classification metrics like the F1-Score or ROC-AUC. For a deep dive into the research application, you can view [this peer-reviewed study: Churn Prediction with Sentiment Analysis using NLP and Machine Learning Techniques](https://www.ijcaonline.org/archives/volume186/number48/li-2024-ijca-924140.pdf). This case study walks through handling imbalanced customer data using SMOTE, extracting sentiment features, and training classifiers.
-
+        <ul>
+            <li>The Accuracy Paradox: the useless model will achieve an incredible 99% accuracy, despite completely failing to catch a single fraudulent transaction.</li>
+            <li>The Bias: Standard machine learning algorithms are designed to maximize overall accuracy. As a result, they will naturally bias themselves toward the majority class and treat the minority class as ignorable noise.</li>
+            <li>Techniques to Handle Class Imbalance: to fix for class imbalance, you have to adjust your data, your algorithm, or your evaluation metrics:
+                <ol>
+                    <li>Data-Level Resampling Techniques: these techniques alter the dataset before feeding it to the model to balance the class proportions.
+                        <ul>
+                            <li>Random Undersampling: randomly removing samples from the majority class until it matches the size of the minority class. Here, you throw away potentially valuable information.</li>
+                            <li>Random Oversampling: randomly duplicating existing samples from the minority class. Here, it can lead to severe overfitting because the model just memorizes the exact same minority data points.</li>
+                            <li>Synthetic Minority Over-sampling Technique (SMOTE)): instead of duplicating existing data, SMOTE creates entirely new, synthetic data points that are statistically similar to the original minority class.</li>
+                        </ul>
+                    </li>
+                    <li>Algorithmic-Level Techniques: instead of changing the data, you change how the algorithm learns.
+                        <ul>
+                            <li>Class Weights (Cost-Sensitive Learning): Most modern algorithms (like Random Forests, SVMs, or Logistic Regression in scikit-learn) have a class_weight parameter. If your ratio is 1:9, you can tell the model that misclassifying a minority point is 9 times more costly than misclassifying a majority point. This forces the hyperplane or decision boundary to respect the minority class.</li>
+                            <li>Tree-Based Ensembles: Tree algorithms (like XGBoost or Random Forest) often handle imbalance better than linear models because they can split data into pure regional nodes, though they still require tuning if the imbalance is extreme.</li>
+                        </ul>
+                    </li>
+                    <li>Change Your Metrics (CRITICAL): never use accuracy to judge an imbalanced dataset. Instead, use metrics that focus heavily on the minority class:
+                        <ul>
+                            <li>Precision: Out of all the points the model predicted as positive, how many were actually positive? (Minimizes False Positives).</li>
+                            <li>Recall (Sensitivity): Out of all the actual positive points, how many did the model manage to find? (Minimizes False Negatives).</li>
+                            <li>F1-Score: The harmonic mean of Precision and Recall, giving you a balanced view of how the model is performing on the minority class.</li>
+                            <li>ROC-AUC: Measures how well the model separates the two classes across various threshold levels.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </li>
+        </ul>
+    </li>
+    <li>Note (NB): A common pitfall is the data leakage trap! When using SMOTE or any oversampling technique, you must only apply it to your Training data. If you apply SMOTE to your entire dataset before splitting it into training and testing sets, synthetic data created from the test set will leak into the training set. This will result in fake, artificially inflated performance scores during evaluation.</li>
+    <li>Performance metrics: in machine learning, performance metrics are quantitative measurements used to evaluate how well an algorithm is performing. They act as a scorecard for your model, telling you how close the model's predictions are to the actual truth. Choosing the right performance metric is critical because a model that looks perfect under one metric might be completely useless under another. For example, when evaluating classification models, looking at a single number like _overall accuracy_ can be deeply misleading (especially with imbalanced data). To truly understand your model's strengths and weaknesses, you need a suite of metrics built around the Confusion Matrix. As different ML tasks have different goals, performance metrics are divided by the type of problem you are solving.
+        <ol>
+            <li>Classification Metrics (Predicting Categories): classification models predict labels or categories (e.g., "Spam" vs. "Not Spam", or "Cat" vs. "Dog"). Most classification metrics are derived from a matrix called the Confusion Matrix.
+                <ul>
+                    <li>Accuracy: this is the percentage of total predictions that the model got exactly right (both positive and negative). It works well only if your dataset is balanced.</li>
+                    <li>Precision: this focuses on minimizing false alarms. Out of everything the model guessed was positive, how many were actually correct?</li>
+                    <li>Recall (Sensitivity): this focuses on minimizing missed cases. Out of all the actual positive cases out there, how many did the model manage to find?</li>
+                    <li>F1-Score: this is the harmonic mean of Precision and Recall. It gives you a single balanced score, making it the go-to metric for imbalanced datasets.</li>
+                    <li>ROC-AUC: this measures the model's ability to distinguish between classes across all possible decision thresholds. An AUC of 1.0 means perfect separation.</li>
+                </ul>
+            </li>
+            <li>Regression Metrics (Predicting Continuous Numbers): regression models predict continuous numeric values (e.g., predicting a house price, tomorrow's temperature, or stock market values). Instead of looking at "right or wrong," these metrics measure the size of the error (residual) between the prediction and reality.
+                <ul>
+                    <li>Mean Absolute Error (MAE): the average of the absolute differences between actual values and predicted values. It treats all errors equally and is highly intuitive (e.g., "On average, our house price predictions are off by $5,000").</li>
+                    <li>Mean Squared Error (MSE): The average of the squared differences between predictions and actual values. Because it squares the errors, it severely penalizes large mistakes or outliers.</li>
+                    <li>Root Mean Squared Error (RMSE): the square root of MSE. This brings the error metric back into the original units of your target data, making it easier to interpret while keeping the penalty for large errors.</li>
+                    <li>R-squared ($R^2$): also known as the coefficient of determination. It measures what percentage of the variance in the data your model explains. It scales from 0 to 1 (or 0% to 100%), allowing you to see how much better your model is than a baseline that just guesses the average value every time.</li>
+                </ul>
+            </li>
+            <li>Unsupervised Metrics (Clustering): in unsupervised learning (like K-Means clustering), there are no "true labels" to compare predictions against. Instead, performance metrics evaluate how cleanly the data has been grouped.
+                <ul>
+                    <li>Silhouette Score: Measures how close a data point is to its own cluster compared to how far away it is from other clusters. It ranges from -1 to +1. A high score means clusters are dense and well-separated.</li>
+                    <li>Inertia (Within-Cluster Sum of Squares): Measures how internally tight the individual clusters are. Lower inertia means data points inside the same cluster are very close to each other.</li>
+                    <li>Davies-Bouldin Index: Evaluates the separation between clusters. A lower score signifies better clustering, meaning clusters are tightly packed and far apart from each other.</li>
+                </ul>
+            </li>
+        </ol>
+    </li>
+    <li>Case study \- classifying customer churn or sentiment analysis: in the real-world business scenarios, companies don't just want to predict if a customer will leave (classification); they also want to look at the text from customer reviews, support tickets, or surveys using Natural Language Processing (NLP) to understand why they are unhappy (sentiment analysis).Here are a few notable instances and open-source implementations of this exact type of case study:
+        <ol>
+            <li>Kaggle End-to-End Projects: Kaggle hosts real and synthetic datasets where data scientists build portfolios around this hybrid problem. A prominent example is the [Kaggle Customer Churn, Uplift, and Feedback Dataset](https://www.kaggle.com/datasets/harrachimustapha/customer-churn-uplift-and-feedback-dataset). This project explicitly instructs users to apply classification models (like Logistic Regression and tree-based ensembles) alongside NLP techniques to analyze synthetic customer text reviews and predict churn based on sentiment indicators.</li>
+            <li>Academic and Industry Research Papers: Organizations regularly publish methodologies detailing how they merge text sentiment with traditional quantitative features (like usage data or billing amounts) to maximize classification metrics like the F1-Score or ROC-AUC. For a deep dive into the research application, you can view [this peer-reviewed study: Churn Prediction with Sentiment Analysis using NLP and Machine Learning Techniques](https://www.ijcaonline.org/archives/volume186/number48/li-2024-ijca-924140.pdf). This case study walks through handling imbalanced customer data using SMOTE, extracting sentiment features, and training classifiers.</li>
+        </ol>
+    </li>
+</ul>
 
 #### Practical Exercise: Financial Well-Being of Small to Medium Enterprise (SME) Businesses ####
 In the included code, this is the project folder "00 Financial Well-Being of Small to Medium Enterprise (SME) Businesses". This was a course assignment project. We chose between two baseline models of logistic regression, and decision tree, Then, we implemented one of them. Thereafter, we implemented and compared two ensemble methods on the model Boosting (e.g. XGBoost) and Bagging (e.g. Random Forest). 
 
-In evaluating the project, we compared: 
-    * single models and ensemble models
-    * bias and variance behaviour
+In evaluating the project, we compared:
+    <ul>
+        <li>single models and ensemble models</li>
+        <li>bias and variance behaviour</li>
+    </ul>
+
 We chose two from among three robustness test to evaluate the model's performance:
-    1. noisy data (add synthetic noise)
-    2. missing values (simulate missing data)
-    3. reduce training data (data scarcity)
+    <ol>
+        <li>noisy data (add synthetic noise)</li>
+        <li>missing values (simulate missing data)</li>
+        <li>reduce training data (data scarcity)</li>
+    </ol>
 Finally, we performed a k-fold cross-validation and analyzed variance in model performance to test the stabilitiy of the model.
 </details>
 
@@ -248,8 +290,6 @@ To catch overfitting early, you cannot rely on a single train/test split. If you
 
 
 ### Unsupervised Learning ###
-<details>
-<summary></summary>
 
 #### Clustering ####
 * Clustering algorithms: this is the process of partitioning a dataset into groups (clusters) such that data points in the same group are more similar to each other than to those in other groups.
@@ -315,7 +355,7 @@ This is an unsupervised machine learning technique used to discover interesting 
     * Recommendation Systems: Streaming or retail platforms suggest items using an "Item-to-Item" association strategy (e.g., Amazon’s "Frequently Bought Together" section).
 
 * Practical exercise: Building a simple recommendation engine.
-</details> 
+
 
 
 ### Deep Learning Fundamentals ###
