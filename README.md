@@ -50,8 +50,11 @@ Still, the process itself is easy to recognize. Deep down, these machines all le
 
 <details>
 <summary>The image above depicts an overview of modern machine learning, and it is an important distinction to say that it is modern because I also learned the traditional model of ML. In it reinforcement learning is an independent discipline, unsupervised and supervised learning have no intersection point, deep learning (DL) is a proper subset of supervised learning, and ML is a proper subset of AI. So you may want to ask yourself:
-1. Does Deep Learning (DL) intersect with Unsupervised Learning (UL)?
-2. Does Reinforcement Learning (RL) stand entirely on its own?</summary>
+<ol>
+    <li>Does Deep Learning (DL) intersect with Unsupervised Learning (UL)?</li>
+    <li>Does Reinforcement Learning (RL) stand entirely on its own?</li>
+</ol>
+</summary>
 
 #### 1. Does DL intersect with UL? ####
 Yes. DL achieved its earliest, most famous breakthroughs using supervised learning (like using CNNs on labeled ImageNet data). It has now heavily expanded into unsupervised territory. Generative Models: Tools like GANs (Generative Adversarial Networks) and Variational Autoencoders (VAEs) learn the underlying distribution of unlabeled data to generate new images or text. Self-Supervised Learning (SSL): This is the massive field driving modern Large Language Models (LLMs like GPT) and vision transformers. The model takes completely unlabeled text, hides a part of it, and tries to predict the missing word. It creates its own "labels" from raw data.
@@ -72,44 +75,60 @@ The Diagram's Depiction: The orange Reinforcement Learning circle overlaps heavi
 ### Introduction to Applied Machine Learning ###
 <details>
 <summary></summary>
-* Overview of machine learning landscape: is the science (and art) of programming computers so they can learn from data. 
-    * Types of learning, key concepts:
-        | Key Term | Definition |
-        |----------|------------|
-        | Online Learning | |
-        | Offline Learning | |
-        | Batch Learning | |
-        | Instance-based Learning | |
-        | Model-based Learning | |
-        | Supervised Learning | is the most common and widely used branch of machine learning. An algorithm learns from a labeled dataset, which means every piece of training data you feed the model comes paired with the correct answer key.The goal of the algorithm is to learn the underlying mathematical mapping or relationship between the inputs ($x$) and the outputs ($y$), so that when it is given brand-new, unseen inputs, it can accurately predict the correct labels. |
-        | Unsupervised Learning | a branch of ML where an algorithm is fed raw, unlabeled training data. The model is left to its own devices to explore the data, find hidden structures, group similar points together, and extract meaningful patterns all on its own. |
-        | Semi-supervised Learning | |
-        | Reinforcement Learning | |
-        | Overfitting (High Variance) | The model is too complex and has essentially memorized the training data, including its random noise and outliers. It is highly sensitive to small fluctuations (variance). |
-        | Underfitting (High Bias) | The model is too simple to capture the underlying patterns in the data. It makes strong, erroneous assumptions (bias). Symptoms include; high error on both the training data and the testing data. |
-        | Regularization | |
-        | Hyperparameter | |
-        | Confusion Matrix | |
-
-
-* Introduction to machine learning tools and frameworks.
-    * Core Workflow
-        1. Data Collection: Gather historical data that already contains the answers (e.g., historical stock prices, or thousands of medical scans marked "benign" or "malignant").
-        2. Feature Extraction: Decide which inputs ($x$) the model should look at to make its decision.
-        3. Training: Feed the training portion of the data to the algorithm so it can adjust its weights to minimize its prediction errors.
-        4. Evaluation: Test the trained model on a separate holdout dataset (the test set) using metrics like Accuracy, F1-Score, or RMSE to see how well it generalizes to the real world.
-    * Data Organization:
-        * Training Set
-        * Validation Set
-        * Testing Set
-* Key concepts in data preprocessing: cleaning, feature engineering, and handling missing values. 
-* Setting up Python-based environments for ML: 
-    * Jupyter Notebooks, 
-    * Numpy,
-    * Pandas,
-    * Matplotlib,
-    * Scikit-Learn, 
-    * and TensorFlow. 
+<ul>
+<li>verview of machine learning landscape: is the science (and art) of programming computers so they can learn from data.
+    <ul>
+    <li>Types of learning, key concepts:
+        <table>
+        <tr><th> Key Term </th><th> Definition </th>
+        <tr><td> Online Learning </td><td></td></tr>
+        <tr><td> Offline Learning </td><td></td></tr>
+        <tr><td> Batch Learning </td><td></td></tr>
+        <tr><td> Instance-based Learning </td><td></td></tr>
+        <tr><td> Model-based Learning </td><td></td></tr>
+        <tr><td> Supervised Learning </td><td>is the most common and widely used branch of machine learning. An algorithm learns from a labeled dataset, which means every piece of training data you feed the model comes paired with the correct answer key.The goal of the algorithm is to learn the underlying mathematical mapping or relationship between the inputs ($x$) and the outputs ($y$), so that when it is given brand-new, unseen inputs, it can accurately predict the correct labels.</td></tr>
+        <tr><td> Unsupervised Learning </td><td>a branch of ML where an algorithm is fed raw, unlabeled training data. The model is left to its own devices to explore the data, find hidden structures, group similar points together, and extract meaningful patterns all on its own.</td></tr>
+        <tr><td> Semi-supervised Learning </td><td></td></tr>
+        <tr><td> Reinforcement Learning </td><td></td></tr>
+        <tr><td> Overfitting (High Variance) </td><td>the model is too complex and has essentially memorized the training data, including its random noise and outliers. It is highly sensitive to small fluctuations (variance).</td></tr>
+        <tr><td> Underfitting (High Bias) </td><td>The model is too simple to capture the underlying patterns in the data. It makes strong, erroneous assumptions (bias). Symptoms include; high error on both the training data and the testing data.</td></tr>
+        <tr><td> Regularization </td><td></td></tr>
+        <tr><td> Hyperparameter </td><td></td></tr>
+        <tr><td> Confusion Matrix </td><td></td></tr>
+        </table>
+    </li></ul>
+</li>
+<li>Introduction to machine learning tools and frameworks.
+    <ul>
+    <li>Core Workflow
+        <ol>
+        <li>Data Collection: Gather historical data that already contains the answers (e.g., historical stock prices, or thousands of medical scans marked "benign" or "malignant").</li>
+        <li>Feature Extraction: Decide which inputs ($x$) the model should look at to make its decision.</li>
+        <li>Training: Feed the training portion of the data to the algorithm so it can adjust its weights to minimize its prediction errors.</li>
+        <li>Evaluation: Test the trained model on a separate holdout dataset (the test set) using metrics like Accuracy, F1-Score, or RMSE to see how well it generalizes to the real world.</li>
+        </ol>
+    </li>
+    <li>Data Organization:
+        <ul>
+        <li>Training Set</li>
+        <li>Validation Set</li>
+        <li>Testing Set</li>
+        </ul>
+    </li>
+    </ul>
+</li>
+<li>Key concepts in data preprocessing: cleaning, feature engineering, and handling missing values.</li>
+<li>Setting up Python-based environments for ML: 
+    <ul>
+    <li>Jupyter Notebooks,</li>
+    <li>Numpy,</li>
+    <li>Pandas,</li>
+    <li>Matplotlib,</li>
+    <li>Scikit-Learn,</li> 
+    <li>and TensorFlow.</li>
+    </ul>
+    </li>
+</ul>
 </details>
 
 
@@ -302,9 +321,11 @@ This is an unsupervised machine learning technique used to discover interesting 
 ### Deep Learning Fundamentals ###
 <details>
 <summary></summary>
-* Introduction to neural networks: Perceptron, Multi-layer Perceptron (MLP). 
-* Activation functions: ReLU, Sigmoid, Tanh. 
-* Backpropagation and gradient descent. 
+<ul>
+    <li>Introduction to neural networks: Perceptron, Multi-layer Perceptron (MLP).</li>
+    <li>Activation functions: ReLU, Sigmoid, Tanh.</li>
+    <li>Backpropagation and gradient descent.</li>
+</ul>
 
 #### Hands-on: Building and training a basic neural network using TensorFlow/Keras. ####
 </details>
@@ -313,38 +334,45 @@ This is an unsupervised machine learning technique used to discover interesting 
 ### Convolutional Neural Networks (CNNs) ###
 <details>
 <summary></summary>
-* Understanding CNNs and their applications in computer vision. 
-* Layers in CNN: Convolutional layers, Pooling layers, Fully connected layers. 
-* Practical application: Image classification using CNN. 
-* Implementing a CNN in TensorFlow/Keras. 
+<ul>
+    <li>Understanding CNNs and their applications in computer vision. </li>
+    <li>Layers in CNN: Convolutional layers, Pooling layers, Fully connected layers. </li>
+    <li>Practical application: Image classification using CNN. </li>
+    <li>Implementing a CNN in TensorFlow/Keras.</li>
+</ul>
 </details>
 
 
 ### Recurrent Neural Networks (RNNs) ###
 <details>
 <summary></summary>
-* RNNs and their applications in sequence modeling (e.g., time series, NLP). 
-* Long Short-Term Memory (LSTM) networks and GRU (Gated Recurrent Unit). 
-* Applications in text generation, machine translation, and stock prediction. 
-* Hands-on: Building a text prediction model with LSTMs. 
+<ul>
+    <li>RNNs and their applications in sequence modeling (e.g., time series, NLP).</li> 
+    <li>Long Short-Term Memory (LSTM) networks and GRU (Gated Recurrent Unit).</li>
+    <li>Applications in text generation, machine translation, and stock prediction.</li>
+    <li>Hands-on: Building a text prediction model with LSTMs.</li>
 </details>
 
 
 ### Model Deployment and Optimization ###
 <details>
 <summary></summary>
-* Model deployment strategies: Batch processing vs. real-time. 
-* Introduction to cloud platforms: AWS, Google Cloud, Azure. 
-* Optimizing models for production environments (e.g., using TensorFlow Lite). 
-* Case study: Deploying a machine learning model to the cloud. 
+<ul>
+    <li>Model deployment strategies: Batch processing vs. real-time.</li>
+    <li>Introduction to cloud platforms: AWS, Google Cloud, Azure.</li>
+    <li>Optimizing models for production environments (e.g., using TensorFlow Lite).</li>
+    <li>Case study: Deploying a machine learning model to the cloud.</li>
+</ul>
 </details>
 
 
 ### Ethical Considerations and Fairness in ML ###
 <details>
 <summary></summary>
-* Understanding bias and fairness in machine learning. 
-* Ethics in AI: Transparency, accountability, and interpretability. 
-* Fairness-aware machine learning algorithms. 
-* Real-world examples and discussions on the ethical implications of ML in various industries.
+<ul>
+    <li>Understanding bias and fairness in machine learning.</li>
+    <li>Ethics in AI: Transparency, accountability, and interpretability.</li>
+    <li>Fairness-aware machine learning algorithms.</li>
+    <li>Real-world examples and discussions on the ethical implications of ML in various industries.</li>
+</ul>
 </details>
