@@ -70,6 +70,8 @@ The Diagram's Depiction: The orange Reinforcement Learning circle overlaps heavi
 
 
 ### Introduction to Applied Machine Learning ###
+<details>
+<summary></summary>
 * Overview of machine learning landscape: is the science (and art) of programming computers so they can learn from data. 
     * Types of learning, key concepts:
         | Key Term | Definition |
@@ -108,8 +110,13 @@ The Diagram's Depiction: The orange Reinforcement Learning circle overlaps heavi
     * Matplotlib,
     * Scikit-Learn, 
     * and TensorFlow. 
+</details>
+
 
 ### Supervised Learning ###
+<details>
+<summary></summary>
+
 #### Regression ####
 * Linear Regression: is one of the most fundamental, widely used algorithms in statistics and machine learning. Its primary goal is to predict a continuous numeric value by establishing a straight-line relationship between one or more independent variables (inputs) and a dependent variable (the output). Think of it as finding the "line of best fit" through a scatter plot of data points.
 * Polynomial Regression: is a form of regression analysis used when the relationship between your independent variable (input) and dependent variable (output) is non-linear (curved). It is essentially an extension of Multiple Linear Regression, but instead of drawing a straight line, it curves the line to fit data points that bend, wave, or change direction. 
@@ -183,6 +190,7 @@ We chose two from among three robustness test to evaluate the model's performanc
     2. missing values (simulate missing data)
     3. reduce training data (data scarcity)
 Finally, we performed a k-fold cross-validation and analyzed variance in model performance to test the stabilitiy of the model.
+</details>
 
 
 ### Model Evaluation and Selection ###
@@ -221,6 +229,9 @@ To catch overfitting early, you cannot rely on a single train/test split. If you
 
 
 ### Unsupervised Learning ###
+<details>
+<summary></summary>
+
 #### Clustering ####
 * Clustering algorithms: this is the process of partitioning a dataset into groups (clusters) such that data points in the same group are more similar to each other than to those in other groups.
     * K-means: partitions data into $K$ distinct, non-overlapping clusters. It places $K$ centroids randomly, assigns each data point to its nearest centroid, recalculates the center of those points to update the centroid position, and repeats until the centroids stop moving. It assumes clusters are spherical and roughly equal in size. You must specify the number of clusters ($K$) upfront (often chosen using the Elbow Method).
@@ -284,36 +295,56 @@ This is an unsupervised machine learning technique used to discover interesting 
     * Store Layout Optimization: Physical supermarkets arrange products with high lift metrics close to each other to prompt impulse buys (like putting chips right next to salsa, or famously, diapers near beer).
     * Recommendation Systems: Streaming or retail platforms suggest items using an "Item-to-Item" association strategy (e.g., Amazon’s "Frequently Bought Together" section).
 
-* Practical exercise: Building a simple recommendation engine. 
+* Practical exercise: Building a simple recommendation engine.
+</details> 
 
 
 ### Deep Learning Fundamentals ###
+<details>
+<summary></summary>
 * Introduction to neural networks: Perceptron, Multi-layer Perceptron (MLP). 
 * Activation functions: ReLU, Sigmoid, Tanh. 
 * Backpropagation and gradient descent. 
 
 #### Hands-on: Building and training a basic neural network using TensorFlow/Keras. ####
+</details>
+
 
 ### Convolutional Neural Networks (CNNs) ###
+<details>
+<summary></summary>
 * Understanding CNNs and their applications in computer vision. 
 * Layers in CNN: Convolutional layers, Pooling layers, Fully connected layers. 
 * Practical application: Image classification using CNN. 
 * Implementing a CNN in TensorFlow/Keras. 
+</details>
+
 
 ### Recurrent Neural Networks (RNNs) ###
+<details>
+<summary></summary>
 * RNNs and their applications in sequence modeling (e.g., time series, NLP). 
 * Long Short-Term Memory (LSTM) networks and GRU (Gated Recurrent Unit). 
 * Applications in text generation, machine translation, and stock prediction. 
 * Hands-on: Building a text prediction model with LSTMs. 
+</details>
+
 
 ### Model Deployment and Optimization ###
+<details>
+<summary></summary>
 * Model deployment strategies: Batch processing vs. real-time. 
 * Introduction to cloud platforms: AWS, Google Cloud, Azure. 
 * Optimizing models for production environments (e.g., using TensorFlow Lite). 
 * Case study: Deploying a machine learning model to the cloud. 
+</details>
+
 
 ### Ethical Considerations and Fairness in ML ###
+<details>
+<summary></summary>
 * Understanding bias and fairness in machine learning. 
 * Ethics in AI: Transparency, accountability, and interpretability. 
 * Fairness-aware machine learning algorithms. 
 * Real-world examples and discussions on the ethical implications of ML in various industries.
+</details>
