@@ -291,7 +291,8 @@ This is an unsupervised machine learning technique used to discover interesting 
 * Introduction to neural networks: Perceptron, Multi-layer Perceptron (MLP). 
 * Activation functions: ReLU, Sigmoid, Tanh. 
 * Backpropagation and gradient descent. 
-* Hands-on: Building and training a basic neural network using TensorFlow/Keras. 
+
+#### Hands-on: Building and training a basic neural network using TensorFlow/Keras. ####
 
 ### Convolutional Neural Networks (CNNs) ###
 * Understanding CNNs and their applications in computer vision. 
