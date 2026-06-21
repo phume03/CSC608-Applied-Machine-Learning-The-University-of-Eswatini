@@ -1,13 +1,16 @@
 # Applied Machine Learning #
-Here we present a dive into _practical applications_ of *machine learning (ML)* in modern organizations and society. We will look into ML Theory and Methods; Data Analysis; Probability & Mathematical Statistics; Deep Learning; Probabilistic Graphical Models; Convex Optimization; Regression Analysis;  Feature engineering (e.g., basis transforms, selection , Principal Components Analysis); Classification versus Regression; Supervised methods (e.g., Naive Bayes, Decision Trees and Random Forests, Linear & Logistic Regression, Support Vector Machines (SVM), Nearest Neighbours (KNN), and Neural Networks(MLP/ANN/CNN/RNN)); Unsupervised clustering methods (e.g., k-Means, Gaussian Mixture Models, Hierarchical Clustering).
+Here we present a dive into _practical applications_ of *machine learning (ML)* in modern organizations and society. We will look into ML Theory and Methods; Data Analysis; Probability & Mathematical Statistics; Deep Learning; Probabilistic Graphical Models; Convex Optimization; Regression Analysis;  Feature engineering (e.g., basis transforms, selection , Principal Components Analysis); Classification versus Regression; Supervised methods (e.g., Naive Bayes, Decision Trees and Random Forests, Linear & Logistic Regression, Support Vector Machines (SVM), Nearest Neighbours (KNN), and Neural Networks (MLP/ANN/CNN/RNN)); Unsupervised clustering methods (e.g., k-Means, Gaussian Mixture Models, Hierarchical Clustering).
 
 ![ML: Human Head Internals as a Computer Components](./MachineLearningExplainer-crSonOfAlan-Lede.webp)
 
 
 ## What Is Machine Learning? ##
 <details>
-<summary><blockquote>"Neural networks and other forms of machine learning ultimately learn by
-trial and error, one improvement at a time" ~ John Pavlus, [Quanta Magazine \(July 8, 2024\)](https://www.quantamagazine.org/what-is-machine-learning-20240708/)</blockquote></summary>
+<summary>
+<blockquote>"Neural networks and other forms of machine learning ultimately learn by
+trial and error, one improvement at a time" ~ John Pavlus, [Quanta Magazine (July 8, 2024)](https://www.quantamagazine.org/what-is-machine-learning-20240708/)
+</blockquote>
+</summary>
 <br>
 
 ![ML: Human Head Internals as assortment of language models](./LLMNativeLanguage-crMyriamWares-Lede.jpg)
