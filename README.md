@@ -1,5 +1,18 @@
 # Applied Machine Learning #
-Here we present a dive into _practical applications_ of *machine learning (ML)* in modern organizations and society. We will look into ML Theory and Methods; Data Analysis; Probability & Mathematical Statistics; Deep Learning; Probabilistic Graphical Models; Convex Optimization; Regression Analysis;  Feature engineering (e.g., basis transforms, selection , Principal Components Analysis); Classification versus Regression; Supervised methods (e.g., Naive Bayes, Decision Trees and Random Forests, Linear & Logistic Regression, Support Vector Machines (SVM), Nearest Neighbours (KNN), and Neural Networks (MLP/ANN/CNN/RNN)); Unsupervised clustering methods (e.g., k-Means, Gaussian Mixture Models, Hierarchical Clustering).
+In this course we were presented with a dive into _practical applications_ of *machine learning (ML)* in modern organizations and society. The tentative topic schedule was:
+    <ul>
+        <li>ML Theory and Methods</li>
+        <li>Data Analysis</li>
+        <li>Probability & Mathematical Statistics</li>
+        <li>Deep Learning</li>
+        <li>Probabilistic Graphical Models</li>
+        <li>Convex Optimization</li>
+        <li>Regression Analysis</li>
+        <li>Feature engineering (e.g., basis transforms, selection , Principal Components Analysis)</li>
+        <li>Classification versus Regression</li>
+        <li>Supervised methods (e.g., Naive Bayes, Decision Trees and Random Forests, Linear & Logistic Regression, Support Vector Machines (SVM), Nearest Neighbours (KNN), and Neural Networks (MLP/ANN/CNN/RNN))</li>
+        <li>Unsupervised clustering methods (e.g., k-Means, Gaussian Mixture Models, Hierarchical Clustering)</li>
+    </ul>
 
 ![ML: Human Head Internals as a Computer Components](./MachineLearningExplainer-crSonOfAlan-Lede.webp)
 
@@ -330,7 +343,9 @@ Finally, we performed a k-fold cross-validation and analyzed variance in model p
 ### Unsupervised Learning ###
 <details>
 <summary></summary>
+
 #### Clustering ####
+
 <ul>
     <li>Clustering algorithms: this is the process of partitioning a dataset into groups (clusters) such that data points in the same group are more similar to each other than to those in other groups.
         <ul>
@@ -480,3 +495,329 @@ This is an unsupervised machine learning technique used to discover interesting 
     <li>Real-world examples and discussions on the ethical implications of ML in various industries.</li>
 </ul>
 </details>
+
+
+## Machine Learning Project Checklist ##
+
+![Machine Learning Checklist](./Machine-Learning-Checklist.png)
+
+<details>
+<summary>
+<blockquote>How do you get accurate results using machine learning (ML) problem after problem? The <strong>challenge</strong> is that each problem is unique, requiring different data sources, features, algorithms, algorithm configurations and so on. The <strong>solution</strong> is to use a checklist that guarantees a good result every time. ~  <a href="https://machinelearningmastery.com/machine-learning-checklist/">Jason Brownlee, MachineLearningMastery</a></blockquote>
+
+### Each Data Problem is Different ###
+You have no idea what algorithm will work best on a problem before you start. Even expert data scientists cannot tell you. This problem is not limited to the selection of machine learning algorithms. You cannot know what data transforms and what features in the data that if exposed would best present the structure of the problem to the algorithms. You may have some ideas. You may also have some favorite techniques. But how do you know that the techniques that got you results last time will get you good results this time?
+
+How do you know that the techniques are transferable from one problem to another? Heuristics are a good starting point (random forest does well on most problems), but they are just that. A starting point, not the end.
+
+### Don’t Start From Zero On Every Problem ###
+You do not need to start from scratch on every problem. Just like you can use a machine learning tool or library to leverage best practice implementations of machine learning, you should leverage best practices in working through a problem. The alternative is that you have to make it up each time you encounter a new problem. The result is that you forget or skip key steps. You take longer than is needed, you get results that are less accurate and you probably have less fun.
+
+How are you supposed to know that you’ve finished working through a machine learning problem unless you have defined the solution and it’s intended use right up front?
+
+### How To Get Accurate Results Reliably ###
+You can get accurate results reliably on your machine learning problems. Firstly, it’s an empirical question. What algorithm? What attributes? You have to think up possibilities and try them out. You have to experiment to find answers to these questions. Treat each dataset like a search problem. Find a combination that gives good results. The amount of time you spend searching will be related to how good the results are. But there is an inflection point where you switch from making large gains to diminishing returns.
+
+Put another way, the selection of data preparation, data transforms, model selection, model tuning, ensemlbing and so on is a combinatorial problem. There are many combinations that work, there are even many combinations that are good enough. Often you don’t need the very best solution. In fact the very best solution may be what you don’t want. It can be expensive to find, it can be fragile to perturbations in the data and it may very likely be a product of over fitting.
+
+You want a good solution, that is good enough for the specific needs of the problem that you are working on. Often a good enough solution is fast, cheap and robust. It’s an easier problem to solve. Also, if you think you need the very best solution, you can use a good enough solution as your first checkpoint. This simple reframing from “most accurate” to “accurate enough” result is how you can guarantee to get good results on each machine learning problem that you work on.
+
+### You Need a Machine Learning Checklist ###
+You can use a checklist to structure your search for the right combination of elements to reliably deliver a good solution to any machine learning problem. A checklist is a simple tool that guarantees an outcome. They’re used all the time in empirical domains where the knowledge is hard won and a guaranteed outcome is very desirable.
+
+For example in aviation like taking off and the use of a pre-flight checklist. Also in medicine with surgical checklists and other fields such as safety compliance. If a result is important, why make up a process every time. Follow a well defined set of steps to a solution.
+
+### Benefits of a Machine Learning Checklist ###
+The 5 benefits of using a checklist to work through machine learning problems are:
+<ul>
+    <li>Less Work: You don’t have to think up all of the techniques to try on each new problem.</li>
+    <li>Better Results: By following all of the steps you are guaranteed to get a good result, probably a better result than average. In fact, it ensures you get any result at all. Many projects fail for many reasons.</li>
+    <li>Starting Point For Improvement: You can use it as a starting point and add to it as you think of more things to try. And you always do.</li>
+    <li>Future Projects Benefit: All of your future projects will benefit from improvements made to the process.</li>
+    <li>Customizable Process: You can design the best checklist for your tools, problem types and preferences.</li>
+    <li>Machine learning algorithms are very powerful, but treat them like a commodity. The specific one that you use matters a lot less if all you’re interested in is accuracy.</li>
+</ul>
+
+In fact, each element of the process becomes a commodity and the idea of favorite methods starts to fade away. I think this is a mature position for problem solving. I think it is probably not appropriate for some endeavors, like academic research. The academic is deeply invested in a specific algorithm. The practitioner sees algorithms only as a means to an end, the predictions or the predictive model.
+
+### Applied Machine Learning Checklist ###
+This example checklist is highly constrained for brevity. In fact, think of it is a demonstration or proof of principle than the one true checklist for all machine learning problems – which it intentionally is not. I have constrained this checklist for classification problems working on tabular data.
+
+Also, to keep it digestible, I have kept the level of abstraction reasonably high and limited most sections to three dot points. Sometimes that is not enough, so I have given specific examples of data transforms and algorithms to try in some parts of the checklist, referred to as interludes.
+
+<ol>
+<li>Define The Problem
+It is important to have a well developed understanding of the problem before touching any data or algorithms. This will give you the tools to interpret results and the vision for what form the solution will take.
+
+You can dive a little deeper into this part of the checklist in the post “How to Define Your Machine Learning Problem“.
+
+1.1 What is the problem?
+This section is intended to capture a clear statement of the problem, as well as any expectations that may have been set and biases that may exist.
+
+Define the problem informally and formally.
+List the assumptions about the problem (e.g. about the data).
+List known problems similar to your problem.
+1.2 Why does the problem need to be solved?
+This section is intended to capture the motivation for solving the problem and force up-front thinking about the expected outcome.
+
+Describe the motivation for solving the problem.
+Describe the benefits of the solution (model or the predictions).
+Describe how the solution will be used.
+1.3 How could the problem be solved manually?
+This section is intended to flush out any remaining domain knowledge and help you gauge whether a machine learning solution is really required.
+
+Describe how the problem is currently solved (if at all).
+Describe how a subject matter expert would make manual predictions.
+Describe how a programmer might hand code a classifier.
+</li><li>Prepare The Data
+Understanding your data is where you should spend most of your time.
+
+The better you understand your data, the better job that you can do to expose its inherent structure to the algorithms to learn.
+
+Dive deeper into this part of the checklist in the posts “How to Prepare Data For Machine Learning” and “Quick and Dirty Data Analysis for your Machine Learning Problem“.
+
+2.1 Data Description
+This section is intended to force you to think about all of the data that is and is not available.
+
+Describe the extent of the data that is available.
+Describe data that is not available but is desirable.
+Describe the data that is available that you don’t need.
+2.2 Data Preprocessing
+This section is intended to organize the raw data into a form that you can work with in your modeling tools.
+
+Format data so that it is in a form that you can work with.
+Clean the data so that it is uniform and consistent.
+Sample the data in order to best trade-off redundancy and problem fidelity.
+Interlude: Shortlist of Data Sampling
+There might be a lot to unpack in the final check on sampling.
+
+There are two important concerns here:
+
+Sample instances: Create a sample of the data that is both representative of the various attribute densities and small enough that you can build and evaluate models quickly. Often it’s not one sample, but many. For example, one for sub-minute model evaluation, one for sub-hour, one for sub-day and so on. More data can change the performance of algorithms.
+Sample attributes: Select attributes that best expose the structures in the data to the models. Different models have different requirements, really different preferences because sometimes breaking the “requirements” gives better results.
+Below are some ideas for different approaches that you can use to sample your data. Don’t choose, use each one in turn and let the results from your test harness tell you which representation to use.
+
+Random or stratified samples
+Rebalance instances by class (more on rebalancing methods)
+Remove outliers (more on outlier methods)
+Remove highly correlated attributes
+Apply dimensionality reduction methods (principle components or t-SNE)
+2.3 Data Transformation
+This section is intended to create multiple views on the data in order to expose more of the problem structure in the data to modeling algorithms in later steps.
+
+Create linear and non-linear transformations of all attributes
+Decompose complex attributes into their constituent parts.
+Aggregate denormalized attributes into higher-order quantities.
+Interlude: Shortlist of Data Transformations
+There is an limited number of data transforms that you can use. There are also old favorites that you can use as a starting point to help tease out whether it is worth exploring specific avenues.
+
+Below is a list of some univariate (single attribute) data transforms you could use.
+
+Square and Cube
+Square root
+Standardize (e.g. 0 mean and unit variance)
+Normalize (e.g. rescale to 0-1)
+Descritize (e.g. convert a real to categorical)
+Which ones should you use? All of them in turn, again, let the results from your test harness inform you as to the best transformations for your problem.
+
+2.4 Data Summarization
+This section is intended to flush out any obvious relationships in the data.
+
+Create univariate plots of each attribute.
+Create bivariate plots of each attribute with every other attribute.
+Create bivariate plots of each attribute with the class variable
+</li><li>Spot Check Algorithms
+Now it is time to start building and evaluating models.
+
+To dive deeper into this part of the checklist, see the posts “How to Evaluate Machine Learning Algorithms” and “Why you should be Spot-Checking Algorithms on your Machine Learning Problems“.
+
+3.1 Create Test Harness
+This section is intended to help you define a robust method for model evaluation that can reliably be used to compare results.
+
+Create a hold-out validation dataset for use later.
+Evaluate and select an appropriate test option.
+Select one (or a small set) performance measure used to evaluate models.
+3.2 Evaluate Candidate Algorithms
+This section is intended to flush quickly out how learnable the problem might be and which algorithms and views on the data may be good for further investigation in the next step.
+
+Select a diverse set of algorithms to evaluate (10-20).
+Use common or standard algorithm parameter configurations.
+Evaluate each algorithm on each prepared view of the data.
+Interlude: Shortlist Algorithms To Try on Classification Problems
+Frankly, the list does not matter as much as the strategy of spot checking and not going with your favorite algorithm.
+
+Nevertheless, if you’re working a classification problem throw in a good mix of algorithms that model the problem quite differently. For example:
+
+Instance-based like k-Nearest Neighbors and Learning Vector Quantization
+Simpler methods like Naive Bayes, Logistic Regression and Linear Discriminant Analysis
+Decision Trees like CART and C4.5/C5.0
+Complex non-linear approaches like Backpropagation and Support Vector Machines
+Always throw in random forest and gradient boosted machines
+To get ideas on algorithm to try, see the post “Tour of Machine Learning Algorithms”
+</li>
+<li>Improve Results
+At this point, you will have a smaller pool of models that are known to be effective on the problem. Now it is time to improve the results.
+
+You can dive deeper into this part of the checklist in the post “How to Improve Machine Learning Results“.
+
+4.1 Algorithm Tuning
+This section is intended to get the most from well performing models.
+
+Use historically effective model parameters.
+Search the space of model parameters.
+Optimize well performing model parameters.
+4.2 Ensemble Methods
+This section is intended to combine the results from well performing models and give a further bump in accuracy.
+
+Use Bagging on well performing models.
+Use Boosting on well performing models.
+Blend the results of well performing models.
+4.3 Model Selection
+This section is intended ensure the process of model selection is well considered.
+
+Select a diverse subset (5-10) of well performing models or model configurations.
+Evaluate well performing models on a hold out validation dataset.
+Select a small pool (1-3) of well performing models.
+</li><li>Finalize Project
+We now have results, look back to the problem definition and remind yourself how to make good use of them.
+
+You can dive deeper into this part of the checklist in the post “How to Use Machine Learning Results“.
+
+5.1 Present Results
+This section is intended to ensure you capture what you did and learned so that others (and your future self) can make best use of it
+
+Write up project in a short report (1-5 pages).
+Convert write-up to a slide deck to share findings with others.
+Share code and results with interested parties.
+5.2 Operationalize Results
+This section is intended to ensure that you deliver on the solution promise made up front.
+
+Adapt the discovered procedure from raw data to result to an operational setting.
+Deliver and make use of the predictions.
+Deliver and make use of the predictive model.
+</li></ol>
+
+
+### Tips For Getting The Most From This Checklist ###
+I think this checklist, that if followed, is a very powerful tool.
+
+In this section I give you a few additional tips that you can use to get the most out of using the checklist on your own problems.
+
+<ol>
+<li>Simplify the Process. Do not do everything on your first try. Pick two algorithms to spot check, one data transformation, one method of improving results, and so on. Get through one cycle of the checklist, then later start adding on the complexity.
+</li><li>Use Version Control. You will be creating a lot of models and a lot of scripts (if you’re using R or Python). Ensure you do not lose a good result by using version control (like GitHub).
+</li><li>Proceduralize. No result, no transform and no visualization is special. Everything should be created procedurally. This may be a process that you write down if you’re using Weka, or it may be Makefiles if you are using R or Python. You will find bugs in your stuff and you will want to be able to regenerate probably all of your results at the drop of a hat. If it’s all proceduralized from the beginning, this is as simple as typing “make“.
+</li><li>Record All Results. I think it’s good practice for every algorithm run to save predictions in a file. Also to save each data transform and sample in a separate file. You can always run new analysis on the data if it is sitting in a file in a directory as part of your project. This matters a lot more if a result took hours, days or weeks to achieve. This includes cross-validation predictions that can be useful in more complex blending strategies.
+</li><li>Don’t Skip Steps. You can cut a step back to the minimum, but don’t skip any step, even if you think you know it all. The idea of the checklist is to guarantee an outcome. Doctors are very smart and very qualified, but they still need to be reminded to wash their hands. Sometimes you can simply forget a key step in the process that is absolutely key (like defining your problem and realizing you don’t even need machine learning).
+</li></ol>
+
+### I’m Skeptical, Can This Really Work? ###
+It’s just a checklist, not a silver bullet.
+
+You still need to put in the work. You still need to learn about the algorithms and data manipulation methods to get the most from them. You still need to learn about your tools and how to get the most from them.
+
+Try it for yourself.
+Prove to yourself that it’s possible to work through a problem end-to-end. Do it in an hour.
+
+Pick a dataset.
+Use Weka (to avoid any programming).
+Use the process.
+Once you get that first result you will see how easy it is and why it’s so important to spend a lot of time up front on the problem definition, on the data preparation and presenting the solution at the backend of the process.
+
+This approach will not get you the very best results.
+This checklist delivers good results, reliably, consistently across problems.
+
+You are not going to win Kaggle competitions with one pass through this checklist, bit you will get a result that you can submit and probably sit above 50% of the leaderboard (often much higher).
+
+You can use it to get great results, but it’s a matter of how much time you want to invest.
+
+The checklist is for classification problems on tabular data.
+I chose to demonstrate this checklist with classification problems on tabular data.
+
+That does not mean that it is limited to classification problems. You can readily adapt it to other problem types (like regression) and other data types (like images and text).
+
+I have used variations of this checklist on both in the past.
+
+The checklist does not cover technique “XYZ“.
+The beauty of the checklist is the simplicity of the idea.
+
+If you don’t like the steps I’ve laid out, replace them with your own. Add in all the techniques you like to use. Build your own checklist!
+
+If you do, I’d love to see a copy.
+
+There’s a lot of redundancy in this approach.
+I view working through a machine learning problem as a balance between exploitation and exploration.
+
+You want to exploit everything you know about machine learning, about the data and about the domain. Add those elements into your process for a given problem.
+
+But don’t exclude the exploration. You need to try stuff that you biases suggest will not be the best. Because sometimes, more often than not, your biases are no good. It’s the nature of data and machine learning.
+
+Why not just code-up the pipeline?
+Why not! Maybe you should if you’re a systems guy.
+
+I have myself many times with many different tool chains and platforms. It is very hard to find the right level of flexibility in a coded system. There always seems to be a method or a tool that does not fit in neatly.
+
+I suspect many Machine Learning As A Service (MLaaS) create a pipeline much like the above checklist to ensure good results.
+
+I will get good results without knowing why.
+This can happen when you’re a beginner.
+
+You can and should dive a little deeper into the final combination of data preparation and modeling algorithms. You should provide all of your procedure with your result so that anyone else can replicate it (say publicly or within your organization if it is a work project).
+
+Good results can standalone if the way they are delivered is reproducible and the evaluation rigorous. The checklist above provides these features if executed well.
+
+Action Step
+Use the checklist to complete a project and build some confidence.
+
+Pick a problem that you can complete in 1-to-2 hours.
+Use the checklist and get a result.
+Share your first project (in the comments).</blockquote>
+</summary>
+
+</details>
+
+
+## Resources ##
+
+* [Colab Primer](https://colab.research.google.com/github/google/picatrix/blob/main/notebooks/Quick_Primer_on_Colab_Jupyter.ipynb)
+* [Mount from Google Drive](https://colab.research.google.com/notebooks/snippets/accessing_files.ipynb#scrollTo=s6nDq8Nk7aPN)
+* [Python/Numpy Review](https://colab.research.google.com/github/cs231n/cs231n.github.io/blob/master/python-colab.ipynb)
+* [Advanced Python Tutorial](https://colab.research.google.com/drive/1gCqFEquqNvEoTDX3SNhR2PZkXWPHKXnc?usp=sharing)
+* [Pandas Data Frame](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/pandas_dataframe_ultraquick_tutorial.ipynb)
+* [Google Colab Charts](https://colab.research.google.com/notebooks/charts.ipynb)
+* [Learning Data Science (LDS)](https://github.com/phume03/LDS-textbook)
+  * [Alternative link to LDS](https://learningds.org/)
+* [Advanced Python Working with Data Git Repo](https://github.com/LinkedInLearning/advanced-python-working-with-data-4312001)
+  * [LinkedIn Learning Course](https://www.linkedin.com/learning/advanced-python-working-with-data)
+* [Data Science for Beginners](https://github.com/phume03/Data-Science-For-Beginners)
+* [Hands-on Machine Learning with Scikit-Learn, Keras & TensorFlow](#)
+* OECD Member States:
+  * [UN Data on Human Development Index](https://hdr.undp.org/data-center/human-development-index#/indicies/HDI)
+  * [List of OECD Member states](https://www.cbs.nl/en-gb/news/2024/42/netherlands-lags-behind-other-oecd-countries-on-labour-productivity-gains/oecd-countries)
+* Ensemble Learning Techniques
+  * [Ensemble Learning IBM Definition](https://www.ibm.com/think/topics/ensemble-learning)
+  * [Guide to Ensemble Learning | Geeks for Geeks](https://www.geeksforgeeks.org/machine-learning/a-comprehensive-guide-to-ensemble-learning/)
+  * [Guide to Ensemble Learning | Sci-kit Learn](https://scikit-learn.org/stable/modules/ensemble.html)
+  * [Advanced Ensemble Techniques](https://colab.research.google.com/github/sushily1997/Machine_Learning/blob/main/ML_15_Advanced_Ensemble_Techniques(Stacking).ipynb/)
+
+* [Data.org Financial Health Prediction Challenge | Zindi.Africa](https://zindi.africa/competitions/dataorg-financial-health-prediction-challenge)
+* [F1 Score in Machine Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/f1-score-in-machine-learning/)
+* [Precision and Recall in Machine Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/precision-and-recall-in-machine-learning/)
+* [XGBoost | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/xgboost/)
+* [XGBoost Multiclass Classification | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/xgboost-multiclass-classification/)
+* [Decision Tree in Machine Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/decision-tree-introduction-example/)
+* [Logistic Regression in Machine Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/understanding-logistic-regression/)
+* [LightGBM (Light Gradient Boosting Machine) | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/lightgbm-light-gradient-boosting-machine/)
+* [Logistic Regression in Machine Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/understanding-logistic-regression/)
+* [Ensemble Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/types-of-ensemble-learning/)
+* [Guide to Ensemble Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/a-comprehensive-guide-to-ensemble-learning/)
+* ITU UN. Human Development Index (HDI). UNDP, 2026. Web. 2 May 2026
+* [What is Ensemble Learning?](https://www.ibm.com/think/topics/ensemble-learning)
+* [Scikit Learn. Ensembles: Gradient boosting, random forests, bagging, voting, stacking](https://scikit-learn.org/stable/modules/ensemble.html)
+* [OECD countries](https://www.oecd.org/en/countries.html)
+* [Hands-On Machine Learning with Scikit-Learn, Kera, and TensorFlow](https://archive.org/details/handsonmachinele0000gron)
+* [Huawei AI Academy Training Materials: Machine Learning](https://www.scribd.com/document/558545481/03-Machine-Learning)
+* [Huawei AI Academy Training Material: Deep Learning](https://www.scribd.com/document/510580299/Deep-Learning)
+* [Huawei AI Academy Training Materials. Python Basics](https://www.studocu.com/row/document/jamaaة-kfr-alshykh/artificial-intelligence/2-chapter-7-python-programming-basics-experimental-guide/21954723)
+* [Learning Data Science: Data Wrangling, Exploration, Visualization, and Modeling with Python](https://learningds.org/intro.html)
+* [Deep Learning](https://www.deeplearningbook.org)
