@@ -255,73 +255,130 @@ Finally, we performed a k-fold cross-validation and analyzed variance in model p
 
 
 ### Model Evaluation and Selection ###
-* Overfitting and underfitting: Bias-Variance tradeoff: before you can evaluate a model, you have to understand the core tension in machine learning: Bias vs. Variance. 
-    * Underfitting (High Bias)
-    * Overfitting (High Variance)
-    * The Tradeoff: as you increase model complexity, bias decreases, but variance increases. The goal of model selection is to find the "sweet spot" that minimizes total error.    
-To catch overfitting early, you cannot rely on a single train/test split. If you get lucky or unlucky with how the data is split, your evaluation will be skewed. Cross-Validation (CV) solves this by rotating which data is used for training and which is used for testing.
-* Cross-validation techniques: 
-    * K-Fold Cross-Validation
-        * The entire dataset is split into $K$ equal-sized chunks (folds).
-        * The model trains on $K-1$ folds and tests on the remaining single fold.
-        * This process repeats $K$ times, so every single fold gets a turn as the test set exactly once.
-        * The final performance score is the average of all $K$ iterations.
-        * Standard Choice: Usually, $K=5$ or $K=10$ strikes the best balance between computational time and statistical reliability.
-    * Leave-One-Out (LOO) Cross-Validation: LOO is an extreme version of K-Fold CV where $K$ equals the total number of data points ($n$) in your dataset.
-        * For every iteration, the model trains on $n-1$ samples and evaluates itself on exactly one single data point.
-        * When to use it: Great for tiny datasets where you cannot afford to waste data on a test split.
-        * The Flaw: It is computationally brutal for large datasets because training a model thousands or millions of times is incredibly slow.
-* Hyper parameter tuning: parameters are weights the model learns on its own during training (like the coefficients in linear regression). Hyperparameters are the architectural settings you must set before training begins (like the value of $K$ in KNN, or $\lambda$ in Ridge regression). Tuning means finding the ideal combination of these settings.
-    * Grid Search: you give the algorithm a specific list of possibilities for each hyperparameter, and it methodically evaluates every single possible combination using cross-validation.
-        * Pros: Exhaustive. If the best combination is on your grid, it will find it.
-        * Cons: Incredibly slow and inefficient (e.g., testing 5 values for 4 parameters requires $5^4 = 625$ model runs).
-    * Random Search: instead of checking every combination, you define a statistical range for each hyperparameter. The algorithm randomly samples a fixed number of combinations from those distributions.
-        * Pros: Way faster than Grid Search and often yields highly comparable (or better) results because it doesn't waste time evaluating slightly different, poor performing configurations.
-    * Bayesian Optimizatio: Grid and Random search are "blind"—they don't look at past results to decide where to search next. Bayesian Optimization builds a secondary probability model that tracks which hyperparameter combinations yield the best performance. It uses this history to intelligently guess and choose the next best settings to test.
-        * Pros: Highly efficient; finds optimal settings with significantly fewer iterations.     
-* Model selection and comparison: once you have tuned multiple distinct algorithms (e.g., a tuned SVM vs. a tuned Random Forest vs. a tuned Logistic Regression), you must pick the winner. 
-    * Best Practices for Fair Comparison: 
-        1. the Golden Rule (Holdout Set): Never use the data used during Hyperparameter Tuning/Cross-Validation to make your final comparison. You must keep a completely isolated Test Set (Holdout Set) locked away until the very end.
-        2. Nested Cross-Validation: For rigorous academic or clinical applications, use Nested CV. An inner loop handles hyperparameter tuning, while an outer loop evaluates overall model generalization.
-        3. Compare Relevant Metrics: Don't just look at accuracy. If you are deploying an algorithm where speed matters (like edge computing on a phone), you might choose a lighter, slightly less accurate Logistic Regression model over a massive, slow SVM model. Consider:
-            * Performance Score (F1, ROC-AUC, RMSE)
-            * Training Time vs. Inference (Prediction) Speed
-            * Model size and explainability (Can you interpret why it made a choice?)
+<details>
+<summary></summary>
+<ul>
+    <li>Overfitting and underfitting: Bias-Variance tradeoff: before you can evaluate a model, you have to understand the core tension in machine learning: Bias vs. Variance.
+        <ul> 
+            <li>Underfitting (High Bias)</li>
+            <li>Overfitting (High Variance)</li>
+            <li>The Tradeoff: as you increase model complexity, bias decreases, but variance increases. The goal of model selection is to find the "sweet spot" that minimizes total error.</li>
+        </ul>
+    To catch overfitting early, you cannot rely on a single train/test split. If you get lucky or unlucky with how the data is split, your evaluation will be skewed. Cross-Validation (CV) solves this by rotating which data is used for training and which is used for testing.
+    </li>
+    <li>Cross-validation techniques: 
+        <ul>
+            <li>K-Fold Cross-Validation
+                <ul>
+                    <li>The entire dataset is split into $K$ equal-sized chunks (folds).</li>
+                    <li>The model trains on $K-1$ folds and tests on the remaining single fold.</li>
+                    <li>This process repeats $K$ times, so every single fold gets a turn as the test set exactly once.</li>
+                    <li>The final performance score is the average of all $K$ iterations.</li>
+                    <li>Standard Choice: Usually, $K=5$ or $K=10$ strikes the best balance between computational time and statistical reliability.</li>
+                </ul>
+            </li>
+            <li>Leave-One-Out (LOO) Cross-Validation: LOO is an extreme version of K-Fold CV where $K$ equals the total number of data points ($n$) in your dataset.
+                <ul>
+                    <li>For every iteration, the model trains on $n-1$ samples and evaluates itself on exactly one single data point.</li>
+                    <li>When to use it: Great for tiny datasets where you cannot afford to waste data on a test split.</li>
+                    <li>The Flaw: It is computationally brutal for large datasets because training a model thousands or millions of times is incredibly slow.</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>Hyper parameter tuning: parameters are weights the model learns on its own during training (like the coefficients in linear regression). Hyperparameters are the architectural settings you must set before training begins (like the value of $K$ in KNN, or $\lambda$ in Ridge regression). Tuning means finding the ideal combination of these settings.
+        <ul>
+            <li>Grid Search: you give the algorithm a specific list of possibilities for each hyperparameter, and it methodically evaluates every single possible combination using cross-validation.
+                <ul>
+                    <li>Pros: Exhaustive. If the best combination is on your grid, it will find it.</li>
+                    <li>Cons: Incredibly slow and inefficient (e.g., testing 5 values for 4 parameters requires $5^4 = 625$ model runs).</li>
+                </ul>
+            </li>
+            <li>Random Search: instead of checking every combination, you define a statistical range for each hyperparameter. The algorithm randomly samples a fixed number of combinations from those distributions.
+                <ul>
+                    <li>Pros: Way faster than Grid Search and often yields highly comparable (or better) results because it doesn't waste time evaluating slightly different, poor performing configurations.</li>
+                </ul>
+            </li>
+            <li>Bayesian Optimizatio: Grid and Random search are "blind"—they don't look at past results to decide where to search next. Bayesian Optimization builds a secondary probability model that tracks which hyperparameter combinations yield the best performance. It uses this history to intelligently guess and choose the next best settings to test.
+                <ul>
+                    <li>Pros: Highly efficient; finds optimal settings with significantly fewer iterations.</li>
+                </ul>
+            </li>
+        </ul>
+    </li>     
+    <li>Model selection and comparison: once you have tuned multiple distinct algorithms (e.g., a tuned SVM vs. a tuned Random Forest vs. a tuned Logistic Regression), you must pick the winner. 
+        <ul>
+            <li>Best Practices for Fair Comparison: 
+                <ol>
+                    <li>the Golden Rule (Holdout Set): Never use the data used during Hyperparameter Tuning/Cross-Validation to make your final comparison. You must keep a completely isolated Test Set (Holdout Set) locked away until the very end.</li>
+                    <li>Nested Cross-Validation: For rigorous academic or clinical applications, use Nested CV. An inner loop handles hyperparameter tuning, while an outer loop evaluates overall model generalization.</li>
+                    <li>Compare Relevant Metrics: Don't just look at accuracy. If you are deploying an algorithm where speed matters (like edge computing on a phone), you might choose a lighter, slightly less accurate Logistic Regression model over a massive, slow SVM model. Consider:
+                        <ul>
+                            <li>Performance Score (F1, ROC-AUC, RMSE)</li>
+                            <li>Training Time vs. Inference (Prediction) Speed</li>
+                            <li>Model size and explainability (Can you interpret why it made a choice?)</li>
+                        </ul>
+                    </li>
+                </ol>
+            </li>
+        </ul>
+    </li>
+</ul>
+</details>
 
 
 ### Unsupervised Learning ###
-
+<details>
+<summary></summary>
 #### Clustering ####
-* Clustering algorithms: this is the process of partitioning a dataset into groups (clusters) such that data points in the same group are more similar to each other than to those in other groups.
-    * K-means: partitions data into $K$ distinct, non-overlapping clusters. It places $K$ centroids randomly, assigns each data point to its nearest centroid, recalculates the center of those points to update the centroid position, and repeats until the centroids stop moving. It assumes clusters are spherical and roughly equal in size. You must specify the number of clusters ($K$) upfront (often chosen using the Elbow Method).
-    * Density-Based Spatial Clustering of Applications with Noise (DBSCAN): instead of calculating distances from centroids, DBSCAN groups points based on how tightly packed they are (density). It identifies "core points" (dense areas), "border points", and completely ignores isolated points. You do not need to specify the number of clusters in advance. It can find clusters of arbitrary, complex shapes (like concentric circles or waves) and is excellent at automatically filtering out outliers/noise. 
-    * Hierarchical clustering: this builds a tree-like hierarchy of clusters. It is usually agglomerative (bottom-up), where every single data point starts as its own mini-cluster, and the algorithm repeatedly merges the two closest clusters together until only one giant cluster remains. The results are visualized using a tree diagram called a Dendrogram, which allows you to look at the chart and visually decide the optimal number of splits after the model runs.
-
-* Evaluating clustering models: since there are no "true labels" to run accuracy checks against, unsupervised evaluation metrics assess the geometric quality of the boundaries.
-    * Silhouette Score: Measures how well-separated the clusters are. For a given point, it evaluates its distance to its own cluster versus its distance to the next nearest cluster. This has a scale between -1 to +1. A score near +1 means points are tightly packed inside their cluster and far from others. A score near 0 means overlapping clusters.
-    * Davies-Bouldin Index: Measures the ratio of the visual size of the clusters to the distance between them. Lower scores are better. A lower index signifies that the clusters are highly compact internally and widely separated from each other.
-    
-* Dimensionality reduction: High-dimensional data (datasets with dozens or hundreds of features) suffer from the "curse of dimensionality"—it becomes sparse, hard to cluster, and impossible to visualize. Dimensionality reduction squashes features down to the most important structural components.
-    * Principal Component Analysis (PCA): a linear technique that rotates and projects data onto new orthogonal axes called Principal Components (PCs). It maximizes the statistical variance of the data along these new lines. It is best used for compressing data to speed up machine learning models while retaining as much original information (variance) as possible.
-    * t-Distributed Stochastic Neighbor Embedding (t-SNE): a non-linear technique that calculates probabilities of similarity between points in a high-dimensional space, and then tries to map those exact same relative probabilities into a low-dimensional space (usually 2D or 3D). It is best used for data visualization. It preserves local structures exceptionally well, making it easy to visually spot clusters in a 2D scatter plot, but it loses global context and shouldn't be used for raw feature compression.
-
-* Case study: Customer segmentation for marketing. That is, a retail business wants to divide its massive customer base into distinct groups to deploy targeted ad campaigns. They have data on age, annual income, browsing frequency, purchase history, and coupon usage.
-    * The Pipeline: Pre-processing: Because K-means relies on distances, features are scaled so income doesn't overwhelm age.
-        * PCA Application: If the dataset has 40 tracking metrics, PCA is used to reduce the components down to 2 or 3 principal features.
-        * Clustering: K-means or DBSCAN groups the customers based on these components.
-
-    * The Outcome: The business identifies 4 distinct segments:
-        * Segment 1: High income, low spending (Conservative).
-        * Segment 2: Low income, high spending (High Risk).
-        * Segment 3: High income, high spending (VIP Target).
-        * Segment 4: Low income, low spending (Budget-Conscious) 
+<ul>
+    <li>Clustering algorithms: this is the process of partitioning a dataset into groups (clusters) such that data points in the same group are more similar to each other than to those in other groups.
+        <ul>
+            <li>K-means: partitions data into $K$ distinct, non-overlapping clusters. It places $K$ centroids randomly, assigns each data point to its nearest centroid, recalculates the center of those points to update the centroid position, and repeats until the centroids stop moving. It assumes clusters are spherical and roughly equal in size. You must specify the number of clusters ($K$) upfront (often chosen using the Elbow Method).</li>
+            <li>Density-Based Spatial Clustering of Applications with Noise (DBSCAN): instead of calculating distances from centroids, DBSCAN groups points based on how tightly packed they are (density). It identifies "core points" (dense areas), "border points", and completely ignores isolated points. You do not need to specify the number of clusters in advance. It can find clusters of arbitrary, complex shapes (like concentric circles or waves) and is excellent at automatically filtering out outliers/noise.</li>
+            <li>Hierarchical clustering: this builds a tree-like hierarchy of clusters. It is usually agglomerative (bottom-up), where every single data point starts as its own mini-cluster, and the algorithm repeatedly merges the two closest clusters together until only one giant cluster remains. The results are visualized using a tree diagram called a Dendrogram, which allows you to look at the chart and visually decide the optimal number of splits after the model runs.</li>
+        </ul>
+    </li>
+    <li>Evaluating clustering models: since there are no "true labels" to run accuracy checks against, unsupervised evaluation metrics assess the geometric quality of the boundaries.
+        <ul>
+            <li>Silhouette Score: Measures how well-separated the clusters are. For a given point, it evaluates its distance to its own cluster versus its distance to the next nearest cluster. This has a scale between -1 to +1. A score near +1 means points are tightly packed inside their cluster and far from others. A score near 0 means overlapping clusters.</li>
+            <li>Davies-Bouldin Index: Measures the ratio of the visual size of the clusters to the distance between them. Lower scores are better. A lower index signifies that the clusters are highly compact internally and widely separated from each other.</li>
+        </ul>
+    </li>
+    <li>Dimensionality reduction: High-dimensional data (datasets with dozens or hundreds of features) suffer from the "curse of dimensionality"—it becomes sparse, hard to cluster, and impossible to visualize. Dimensionality reduction squashes features down to the most important structural components.
+        <ul>
+            <li>Principal Component Analysis (PCA): a linear technique that rotates and projects data onto new orthogonal axes called Principal Components (PCs). It maximizes the statistical variance of the data along these new lines. It is best used for compressing data to speed up machine learning models while retaining as much original information (variance) as possible.</li>
+            <li>t-Distributed Stochastic Neighbor Embedding (t-SNE): a non-linear technique that calculates probabilities of similarity between points in a high-dimensional space, and then tries to map those exact same relative probabilities into a low-dimensional space (usually 2D or 3D). It is best used for data visualization. It preserves local structures exceptionally well, making it easy to visually spot clusters in a 2D scatter plot, but it loses global context and shouldn't be used for raw feature compression.</li>
+        </ul>
+    </li>
+    <li>Case study: Customer segmentation for marketing. That is, a retail business wants to divide its massive customer base into distinct groups to deploy targeted ad campaigns. They have data on age, annual income, browsing frequency, purchase history, and coupon usage.
+        <ul>
+            <li>The Pipeline: Pre-processing: Because K-means relies on distances, features are scaled so income doesn't overwhelm age.
+                <ul>
+                    <li>PCA Application: If the dataset has 40 tracking metrics, PCA is used to reduce the components down to 2 or 3 principal features.</li>
+                    <li>Clustering: K-means or DBSCAN groups the customers based on these components.</li>
+                </ul>
+            </li>
+            <li>The Outcome: The business identifies 4 distinct segments:
+                <ul>
+                    <li>Segment 1: High income, low spending (Conservative).</li>
+                    <li>Segment 2: Low income, high spending (High Risk).</li>
+                    <li>Segment 3: High income, high spending (VIP Target).</li>
+                    <li>Segment 4: Low income, low spending (Budget-Conscious)</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
 
 
 #### Association Rule Learning ####
 This is an unsupervised machine learning technique used to discover interesting relationships, hidden patterns, or frequent connections between variables in massive databases. Unlike clustering, which groups similar objects together, association rule learning focuses on finding rules that dictate when the occurrence of one item implies the occurrence of another.
 
-* Market Basket Analysis and Association Rule Mining: the most famous application of association rule learning is **Market Basket Analysis**, which analyzes customer purchasing habits to determine what products are frequently bought together. To find these relationships, the algorithm evaluates transactions using three critical mathematical metrics:
-    1. Support: measures how frequently a specific item or combination of items appears across the entire transactional database. It seeks to answer the question "how popular is the itemset"?
+<ul>
+    <li>Market Basket Analysis and Association Rule Mining: the most famous application of association rule learning is **Market Basket Analysis**, which analyzes customer purchasing habits to determine what products are frequently bought together. To find these relationships, the algorithm evaluates transactions using three critical mathematical metrics:
+        <ol>
+            <li>Support: measures how frequently a specific item or combination of items appears across the entire transactional database. It seeks to answer the question "how popular is the itemset"?
     
         $$\text{Support}(A \to B) = \frac{\text{Transactions containing both A and B}}{\text{Total Transactions}}$$
     
@@ -330,32 +387,39 @@ This is an unsupervised machine learning technique used to discover interesting 
         $\{\text{Bread} \to \text{Butter}\}$ 
     
     is 10% ($100 / 1000$). High support means the pattern is common.
-    
-    2. Confidence: measures how often the rule turns out to be true. It seeks to answer the question "How reliable is the rule?" by calculating the probability that item $B$ is purchased, given that item $A$ has already been purchased.
+            </li>
+            <li>Confidence: measures how often the rule turns out to be true. It seeks to answer the question "How reliable is the rule?" by calculating the probability that item $B$ is purchased, given that item $A$ has already been purchased.
     
         $$\text{Confidence}(A \to B) = \frac{\text{Transactions containing both A and B}}{\text{Transactions containing A only}}$$
     
     Interpretation: If 200 transactions contain Bread, and 100 of those also contain Butter, the Confidence is 50% ($100 / 200$). This means half the people who bought bread also bought butter.
-    
-    3. Lift measures the strength of the rule over random chance. It seeks to answer the question "How strong is the association?" by comparing how much more often $A$ and $B$ occur together than if they were completely independent of each other.
+            </li>
+            <li>Lift measures the strength of the rule over random chance. It seeks to answer the question "How strong is the association?" by comparing how much more often $A$ and $B$ occur together than if they were completely independent of each other.
     
         $$\text{Lift}(A \to B) = \frac{\text{Support}(A \to B)}{\text{Support}(A) \times \text{Support}(B)}$$
-        
-        * $\text{Lift} = 1$: Items $A$ and $B$ are completely independent. Buying $A$ has no effect on buying $B$.
-        * $\text{Lift} > 1$: Items $A$ and $B$ are positively associated. Buying $A$ significantly increases the likelihood of buying $B$. (This is what data scientists look for).
-        * $\text{Lift} < 1$: Items $A$ and $B$ are negatively associated (substitutes). Buying $A$ means they are less likely to buy $B$ (e.g., Apple iPhone vs. Samsung Galaxy).
-
-* Algorithms: searching through millions of transactions to check every single item combination is computationally impossible. These algorithms use smart optimization strategies to prune useless combinations.
-    * Apriori Algorithm: apriori relies on the downward-closure property: If an itemset is frequent, then all of its subsets must also be frequent. Conversely, if an item like "avocado" is rarely bought, then any combination containing avocado (like avocado + bread + milk) is automatically discarded. It scans the database multiple times, starting with single items, expanding to pairs, triplets, etc., filtering out any combination that falls below a user-defined Minimum Support threshold. It can be slow on massive databases because it has to repeatedly scan the entire transactional history.
-    * Eclat Algorithm (Equivalence Class Transformation): while Apriori looks at data horizontally (Transaction ID $\to$ List of Items), Eclat transforms the data vertically (Item $\to$ List of Transaction IDs). To find out how often Bread and Butter are bought together, Eclat simply finds the intersection of the transaction IDs for Bread and the transaction IDs for Butter. It is typically much faster than Apriori for smaller or medium datasets because it only needs to scan the database once.
-
-* Applications:
-    * Product Bundling: E-commerce stores package highly associated items together at a slight discount (e.g., selling a camera, a tripod, and an SD card as a single bundle).
-    * Store Layout Optimization: Physical supermarkets arrange products with high lift metrics close to each other to prompt impulse buys (like putting chips right next to salsa, or famously, diapers near beer).
-    * Recommendation Systems: Streaming or retail platforms suggest items using an "Item-to-Item" association strategy (e.g., Amazon’s "Frequently Bought Together" section).
-
-* Practical exercise: Building a simple recommendation engine.
-
+                <ul>
+                    <li> $\text{Lift} = 1$: Items $A$ and $B$ are completely independent. Buying $A$ has no effect on buying $B$.</li>
+                    <li> $\text{Lift} > 1$: Items $A$ and $B$ are positively associated. Buying $A$ significantly increases the likelihood of buying $B$. (This is what data scientists look for).</li>
+                    <li> $\text{Lift} < 1$: Items $A$ and $B$ are negatively associated (substitutes). Buying $A$ means they are less likely to buy $B$ (e.g., Apple iPhone vs. Samsung Galaxy).</li>
+                </ul>
+            </li>
+        </ol>
+    </li>
+    <li>Algorithms: searching through millions of transactions to check every single item combination is computationally impossible. These algorithms use smart optimization strategies to prune useless combinations.
+        <ul>
+            <li>Apriori Algorithm: apriori relies on the downward-closure property: If an itemset is frequent, then all of its subsets must also be frequent. Conversely, if an item like "avocado" is rarely bought, then any combination containing avocado (like avocado + bread + milk) is automatically discarded. It scans the database multiple times, starting with single items, expanding to pairs, triplets, etc., filtering out any combination that falls below a user-defined Minimum Support threshold. It can be slow on massive databases because it has to repeatedly scan the entire transactional history.</li>
+            <li>Eclat Algorithm (Equivalence Class Transformation): while Apriori looks at data horizontally (Transaction ID $\to$ List of Items), Eclat transforms the data vertically (Item $\to$ List of Transaction IDs). To find out how often Bread and Butter are bought together, Eclat simply finds the intersection of the transaction IDs for Bread and the transaction IDs for Butter. It is typically much faster than Apriori for smaller or medium datasets because it only needs to scan the database once.</li>
+        </ul>
+    </li>
+    <li>Applications:
+        <ul>
+            <li>Product Bundling: E-commerce stores package highly associated items together at a slight discount (e.g., selling a camera, a tripod, and an SD card as a single bundle).</li>
+            <li>Store Layout Optimization: Physical supermarkets arrange products with high lift metrics close to each other to prompt impulse buys (like putting chips right next to salsa, or famously, diapers near beer).</li>
+            <li>Recommendation Systems: Streaming or retail platforms suggest items using an "Item-to-Item" association strategy (e.g., Amazon’s "Frequently Bought Together" section).</li>
+        </ul>
+    </li>
+    <li>Practical exercise: Building a simple recommendation engine.</li>
+</details>
 
 
 ### Deep Learning Fundamentals ###
