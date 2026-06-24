@@ -1,16 +1,16 @@
 # Applied Machine Learning #
-In this course we were presented with a dive into _practical applications_ of *machine learning (ML)* in modern organizations and society. The tentative topic schedule was:
+In this course we were presented with a dive into [_practical applications_ of *machine learning (ML)*](https://www.geeksforgeeks.org/machine-learning/applications-of-machine-learning/) in modern organizations and society. The tentative topic schedule was:
     <ul>
-        <li>ML Theory and Methods</li>
+        <li>[ML Theory and Methods](https://www.sciencedirect.com/topics/computer-science/machine-learning-theory)</li>
         <li>Data Analysis</li>
-        <li>Probability & Mathematical Statistics</li>
-        <li>Deep Learning</li>
+        <li>[Probability & Mathematical Statistics](https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/)</li>
+        <li>[Deep Learning](https://www.deeplearningbook.org/)</li>
         <li>Probabilistic Graphical Models</li>
         <li>Convex Optimization</li>
         <li>Regression Analysis</li>
         <li>Feature engineering (e.g., basis transforms, selection , Principal Components Analysis)</li>
         <li>Classification versus Regression</li>
-        <li>Supervised methods (e.g., Naive Bayes, Decision Trees and Random Forests, Linear & Logistic Regression, Support Vector Machines (SVM), Nearest Neighbours (KNN), and Neural Networks (MLP/ANN/CNN/RNN))</li>
+        <li>Supervised methods (e.g., Naive Bayes, [Decision Trees](https://www.geeksforgeeks.org/machine-learning/decision-tree-introduction-example/) and Random Forests, Linear & [Logistic Regression](https://www.geeksforgeeks.org/machine-learning/understanding-logistic-regression/), Support Vector Machines (SVM), Nearest Neighbours (KNN), and Neural Networks (MLP/ANN/CNN/RNN))</li>
         <li>Unsupervised clustering methods (e.g., k-Means, Gaussian Mixture Models, Hierarchical Clustering)</li>
     </ul>
 
@@ -29,45 +29,35 @@ trial and error, one improvement at a time" ~ John Pavlus, <a href="https://www.
 ![ML: Human Head Internals as assortment of language models](./LLMNativeLanguage-crMyriamWares-Lede.jpg)
 
 <br>
-<p>By now, many people think they know what <strong>machine learning</strong> is: You “feed” computers a bunch of “training data” so that they “learn” to do things without our having to specify exactly how. But computers aren’t dogs, data isn’t kibble, and that previous sentence has way too many air quotes. What does that stuff really mean? 
+<p>
+<div style="background-color: #0066ee; padding: 10px; color: #eeeeee;">By now, many people think they know what <strong>machine learning</strong> is: You “feed” computers a bunch of “training data” so that they “learn” to do things without our having to specify exactly how. But computers aren’t dogs, data isn’t kibble, and that previous sentence has way too many air quotes. What does that stuff really mean? 
+</div>
+<br>
 
-Machine learning is a sub eld of <strong>articial intelligence (AI)</strong>, which explores how to computationally simulate (or surpass) humanlike intelligence. While some AI techniques (such as expert systems) use other approaches, machine learning drives most of the field’s current progress by focusing on one thing: using algorithms to automatically improve the performance of other algorithms.
+[Machine Learning](https://www.scribd.com/document/558545481/03-Machine-Learning) is a sub-field of <strong>articial intelligence (AI)</strong>, which explores how to computationally simulate (or surpass) human-like intelligence. While some AI techniques (such as expert systems) use other approaches, machine learning drives most of the field’s current progress by focusing on one thing: using algorithms to automatically improve the performance of other algorithms. Here’s how that can work in practice, for a common kind of machine learning called <strong>supervised learning</strong>. The process begins with a task — say, “recognize cats in photos.” The goal is to find a mathematical function that can accomplish the task. This function, which is called <strong>the model</strong>, will take one kind of number as input — in this case, digitized photographs — and transform them into more numbers as output, which might represent labels saying “cat” or “not cat” (binary classification). The model has a basic mathematical form, or shape, that provides some structure for the task, but it’s not likely to produce accurate results at first. 
 
-Here’s how that can work in practice, for a common kind of machine learning called <strong>supervised learning</strong>. The process begins with a task — say, “recognize cats in photos.” The goal is to find a mathematical function that can accomplish the task. This function, which is called <strong>the model</strong>, will take one kind of numbers as input — in this case, digitized photographs — and transform them into more numbers as output, which might represent labels saying “cat” or “not cat.” The model has a basic mathematical form, or shape, that provides some structure for the task, but it’s not likely to produce accurate results at rst. 
-
-Now it’s time to train the model, which is where another kind of algorithm takes over. First, a different mathematical function (called the objective) computes a number representing the current “distance” between the model’s outputs and the desired result. Then, the training algorithm uses the objective’s distance measurement to adjust the shape of the original model. It doesn’t have to “know” anything about what the model represents; it simply nudges parts of the model (called the parameters) in certain mathematical directions that minimize that distance between actual and desired output.
-
-Once these adjustments are made, the process restarts. The updated model transforms inputs from the training examples into (slightly better) outputs, then the objective function indicates yet another (slightly better) adjustment to the model. And so on, back and forth, back and forth. After enough iterations, the trained model should be able to produce accurate outputs for most of its training examples. And here’s the real trick: It should also maintain that performance on new examples of the task, as long as they’re not too dissimilar from the training. 
+Now it’s time to train the model, which is where another kind of algorithm takes over. First, a different mathematical function (called the objective) computes a number representing the current “distance” between the model’s outputs and the desired result. Then, the training algorithm uses the objective’s distance measurement to adjust the shape of the original model. It doesn’t have to “know” anything about what the model represents; it simply nudges parts of the model (called the parameters) in certain mathematical directions that minimize that distance between actual and desired output. Once these adjustments are made, the process restarts. The updated model transforms inputs from the training examples into (slightly better) outputs, then the objective function indicates yet another (slightly better) adjustment to the model. And so on, back and forth, back and forth. After enough iterations, the trained model should be able to produce accurate outputs for most of its training examples. And here’s the real trick: It should also maintain that performance on new examples of the task, as long as they’re not too dissimilar from the training. 
 
 Using one function to repeatedly nudge another function may sound more like busywork than “machine learning.” But that’s the whole point. Setting this mindless process in motion lets a mathematical approximation of the task emerge automatically, without human beings
-having to specify which details matter. With ef cient algorithms, well chosen functions and enough examples, machine learning can create
-powerful computational models that do things we have no idea how to program.
+having to specify which details matter. With efficient algorithms, well chosen functions and enough examples, machine learning can create
+powerful computational models that do things we have no idea how to program. Classification and prediction tasks — like identifying cats in photos or spam in emails — usually rely on supervised machine learning, which means the training data is already sorted in advance: The photos containing cats, for example, are labeled “cat.” The training process shapes a function that can map as much of the input onto its corresponding (known) output as possible. After that, the trained model labels unfamiliar examples. Unsupervised learning, meanwhile, finds structure within unlabeled examples, clustering them into groups that are not specified in advance. Content-recommendation systems that learn from a user’s past behavior, as well as some object-recognition tasks in computer vision, can rely on unsupervised learning. Some tasks, like the language modeling performed by systems like GPT-4, use clever combinations of supervised and unsupervised techniques known as self- and semi-supervised learning.
 
-Classification and prediction tasks — like identifying cats in photos or spam in emails — usually rely on supervised machine learning, which means the training data is already sorted in advance: The photos containing cats, for example, are labeled “cat.” The training process shapes a function that can map as much of the input onto its corresponding (known) output as possible. After that, the trained model labels unfamiliar examples. 
+Finally, reinforcement learning shapes a function by using a reward signal instead of examples of desired results. By maximizing this reward through trial and error, a model can improve its performance on dynamic, sequential tasks like playing games (like chess and Go) or controlling the behavior of real and virtual agents (like self-driving cars or chatbots). To put these approaches into practice, researchers use a variety of exotic-sounding algorithms, from kernel machines to Q-learning. But since the 2010s, artificial neural networks have taken center stage. These algorithms — so named because their basic shape is inspired by the connections between brain cells — have succeeded at many complex tasks once considered impractical. Large language models, which use machine learning to predict the next word (or word fragment) in a string of text, are built with “deep” neural networks with billions or even trillions of parameters.
 
-Unsupervised learning, meanwhile, nds structure within unlabeled examples, clustering them into groups that are not speci ed in advance.
-Content-recommendation systems that learn from a user’s past behavior, as well as some object-recognition tasks in computer vision, can rely on unsupervised learning. Some tasks, like the language modeling performed by systems like GPT-4, use clever combinations of supervised and unsupervised techniques known as self- and semi-supervised learning.
-
-Finally, reinforcement learning shapes a function by using a reward signal instead of examples of desired results. By maximizing this reward through trial and error, a model can improve its performance on dynamic, sequential tasks like playing games (like chess and Go) or controlling the behavior of real and virtual agents (like self-driving cars or chatbots). 
-
-To put these approaches into practice, researchers use a variety of exotic-sounding algorithms, from kernel machines to Q-learning. But since the 2010s, artificial neural networks have taken center stage. These algorithms — so named because their basic shape is inspired by the connections between brain cells — have succeeded at many complex tasks once considered impractical. Large language models, which use machine learning to predict the next word (or word fragment) in a string of text, are built with “deep” neural networks with billions or even trillions of parameters.
-
-But even these behemoths, like all machine learning models, are just functions at heart — mathematical shapes. In the right context, they can be extremely powerful tools, but they also have familiar weaknesses. An “overfitted” model ts its training examples so snugly that it can’t reliably generalize, like a cat-recognizing system that fails when a photo is turned upside-down. Biases in data can be ampli ed by the training process, leading to distorted — or even unjust — results. And even when a model does work, it’s not always clear why. (Deep learning algorithms are particularly plagued by this “interpretability” problem.)
-
-Still, the process itself is easy to recognize. Deep down, these machines all learn the same way: back and forth, back and forth.</p>
+But even these behemoths, like all machine learning models, are just functions at heart — mathematical shapes. In the right context, they can be extremely powerful tools, but they also have familiar weaknesses. An “overfitted” model fits its training examples so snugly that it can’t reliably generalize, like a cat-recognizing system that fails when a photo is turned upside-down. Biases in data can be amplified by the training process, leading to distorted — or even unjust — results. And even when a model does work, it’s not always clear why ([Deep Learning](https://www.scribd.com/document/510580299/Deep-Learning) algorithms are particularly plagued by this “interpretability” problem). Still, the process itself is easy to recognize. Deep down, these machines all learn the same way: back and forth, back and forth.</p>
 </details>
 
+
 ## Objectives/Outline ##
-
-![Modern Machine Learning Venn Diagram](./Modern%20Machine%20Learning.png)
-
 <details>
-<summary>The image above depicts an overview of modern machine learning, and it is an important distinction to say that it is modern because I also learned the traditional model of ML. In it reinforcement learning is an independent discipline, unsupervised and supervised learning have no intersection point, deep learning (DL) is a proper subset of supervised learning, and ML is a proper subset of AI. So you may want to ask yourself:
+<summary>The image below depicts an overview of modern machine learning, and it is an important distinction to say that it is modern because I also learned the traditional model of ML. In it reinforcement learning is an independent discipline, unsupervised and supervised learning have no intersection point, deep learning (DL) is a proper subset of supervised learning, and ML is a proper subset of AI. So you may want to ask yourself:
 <ol>
     <li>Does Deep Learning (DL) intersect with Unsupervised Learning (UL)?</li>
     <li>Does Reinforcement Learning (RL) stand entirely on its own?</li>
 </ol>
 </summary>
+
+![Modern Machine Learning Venn Diagram](./Modern%20Machine%20Learning.png)
 
 #### 1. Does DL intersect with UL? ####
 Yes. DL achieved its earliest, most famous breakthroughs using supervised learning (like using CNNs on labeled ImageNet data). It has now heavily expanded into unsupervised territory. Generative Models: Tools like GANs (Generative Adversarial Networks) and Variational Autoencoders (VAEs) learn the underlying distribution of unlabeled data to generate new images or text. Self-Supervised Learning (SSL): This is the massive field driving modern Large Language Models (LLMs like GPT) and vision transformers. The model takes completely unlabeled text, hides a part of it, and tries to predict the missing word. It creates its own "labels" from raw data.
@@ -84,61 +74,66 @@ The Diagram's Depiction: The orange Reinforcement Learning circle overlaps heavi
 </details>
 
 
-
 ### Introduction to Applied Machine Learning ###
 <details>
-<summary>Overview of machine learning landscape: it is the science (and art) of programming computers so they can learn from data.</summary>
-<ul>
-<li>Types of learning, key concepts:
-                <table>
-                    <tr><th> Key Term </th><th> Definition </th>
-                    <tr><td> Online Learning </td><td></td></tr>
-                    <tr><td> Offline Learning </td><td></td></tr>
-                    <tr><td> Batch Learning </td><td></td></tr>
-                    <tr><td> Instance-based Learning </td><td></td></tr>
-                    <tr><td> Model-based Learning </td><td></td></tr>
-                    <tr><td> Supervised Learning </td><td>is the most common and widely used branch of machine learning. An algorithm learns from a labeled dataset, which means every piece of training data you feed the model comes paired with the correct answer key.The goal of the algorithm is to learn the underlying mathematical mapping or relationship between the inputs ($x$) and the outputs ($y$), so that when it is given brand-new, unseen inputs, it can accurately predict the correct labels.</td></tr>
-                    <tr><td> Unsupervised Learning </td><td>a branch of ML where an algorithm is fed raw, unlabeled training data. The model is left to its own devices to explore the data, find hidden structures, group similar points together, and extract meaningful patterns all on its own.</td></tr>
-                    <tr><td> Semi-supervised Learning </td><td></td></tr>
-                    <tr><td> Reinforcement Learning </td><td></td></tr>
+    <summary>Overview of machine learning landscape: it is the science (and art) of programming computers so they can learn from data.</summary>
+    <ul>
+        <li>Types of learning, key concepts:
+            <table>
+                <tr><th> Key Term </th><th> Definition </th>
+                <tr><td> Online Learning </td><td>Online machine learning is a method of machine learning where the model incrementally learns from a stream of data points in real-time. It’s a dynamic process that adapts its predictive algorithm over time, allowing the model to change as new data arrives. This method is incredibly significant in today's rapidly evolving data-rich environments because it can provide timely and accurate predictions.</td></tr>
+                <tr><td> Offline (Batch) Learning </td><td>Batch learning, also termed offline learning, is that type of learning where the model undergoes a training process from the entire batch of data. In offline mode, the training data is preprocessed and saved in a file or database before the training begins. The entire dataset is divided into small batches, and each batch is loaded into memory for processing. This allows for better memory management and more efficient use of available resources. This process results in the creation of a model that can be used to make the prediction. Once trained, the model is not updated by default; the only way to rebuild a given model is restructuring it with new data. In offline mode, GPU resources can be utilized to train ML/DL models more quickly. GPUs are particularly good at parallel processing, which means they can perform many calculations simultaneously. This can dramatically speed up training times for ML/DL models. However, offline mode training can be time-consuming and require a significant amount of storage space for the training data.</td></tr>
+                <tr><td> Instance-based Learning </td><td>The Machine Learning systems which are categorized as instance-based learning are the systems that learn the training examples by heart and then generalizes to new instances based on some similarity measure. It is called instance-based because it builds the hypotheses from the training instances. It is also known as memory-based learning or lazy-learning (because they delay processing until a new instance must be classified). The time complexity of this algorithm depends upon the size of training data. Each time whenever a new query is encountered, its previously stores data is examined. And assign to a target function value for the new instance.</td></tr>
+                <tr><td> Model-based Learning </td><td>Model-based learning is a type of machine learning approach in which the model learns general patterns or rules from the training data and uses these patterns to make predictions on new, unseen data. Unlike instance-based learning, which relies on memorizing specific examples, model-based learning builds a generalizable model that captures the underlying structure of the data. This approach, also known as parametric learning, allows the model to make predictions without storing all individual instances, making it scalable and efficient for large datasets. In model-based learning, the training process involves estimating a set of parameters (such as coefficients in linear regression) or constructing a mathematical representation (like a decision tree) that best fits the data. This model can then generalize to new data, making predictions based on the learned parameters or structure. Common model-based algorithms include linear regression, logistic regression, support vector machines (SVM), decision trees, and neural networks. Model-based learning is particularly effective in tasks where understanding the global patterns or trends in data is crucial, such as in financial forecasting, image recognition, and predictive maintenance.</td></tr>
+                <tr><td> Supervised Learning </td><td>is the most common and widely used branch of machine learning. An algorithm learns from a labeled dataset, which means every piece of training data you feed the model comes paired with the correct answer key.The goal of the algorithm is to learn the underlying mathematical mapping or relationship between the inputs ($x$) and the outputs ($y$), so that when it is given brand-new, unseen inputs, it can accurately predict the correct labels.</td></tr>
+                <tr><td> Unsupervised Learning </td><td>a branch of ML where an algorithm is fed raw, unlabeled training data. The model is left to its own devices to explore the data, find hidden structures, group similar points together, and extract meaningful patterns all on its own.</td></tr>
+                <tr><td> Semi-supervised Learning </td><td>Semi-supervised learning (SSL) is a hybrid machine learning approach that leverages a small amount of labeled data along with a large amount of unlabeled data to train models for classification or regression tasks. It is particularly useful when labeling data is expensive or time-consuming, but unlabeled data is abundant. Core Assumptions in SSL include:
+                <ul>
+                    <li>Smoothness Assumption – Nearby points in high-density regions share the same label.</li>
+                    <li>Cluster Assumption – Data points in the same cluster likely belong to the same class.</li>
+                    <li>Low-Density Separation – Decision boundaries should pass through low-density regions.</li>
+                    <li>Manifold Assumption – Data lies on lower-dimensional manifolds where points on the same manifold share labels.</li>
+                </ul>
+                </td></tr>
+                <tr><td> Reinforcement Learning </td><td>Reinforcement learning (RL) is a type of machine learning where an "agent" learns optimal behavior through interaction with its environment. Rather than relying on explicit programming or labeled datasets, this agent learns by trial and error, receiving feedback in the form of rewards or penalties for its actions. This process mirrors how people typically learn naturally, making RL a powerful approach for creating intelligent systems capable of solving complex problems.</td></tr>
                 <tr><td> Overfitting (High Variance) </td><td>the model is too complex and has essentially memorized the training data, including its random noise and outliers. It is highly sensitive to small fluctuations (variance).</td></tr>
                 <tr><td> Underfitting (High Bias) </td><td>The model is too simple to capture the underlying patterns in the data. It makes strong, erroneous assumptions (bias). Symptoms include; high error on both the training data and the testing data.</td></tr>
-                <tr><td> Regularization </td><td></td></tr>
-                <tr><td> Hyperparameter </td><td></td></tr>
-                <tr><td> Confusion Matrix </td><td></td></tr>
+                <tr><td> Regularization </td><td>Regularization is a method to increase a model’s generalizability, meaning its ability to make accurate predictions on unseen data, even if it slightly reduces accuracy on the training set. Overfitting occurs when a model learns not only the underlying patterns but also the noise in the training data, leading to poor performance on new data. Regularization addresses this by penalizing large or complex model parameters, effectively discouraging the model from fitting every detail in the training data.</td></tr>
+                <tr><td> Hyperparameter </td><td>Hyperparameters are configuration variables that are set before the training process of a machine learning model begins. They control the learning process itself, rather than being learned from the data. Hyperparameters are crucial for tuning the performance of a model and can significantly impact its accuracy, generalization, and other metrics.</td></tr>
+                <tr><td> Confusion Matrix </td><td>A confusion matrix is a table used to evaluate the performance of a classification model. It provides a detailed breakdown of the model's predictions compared to the actual outcomes, helping to identify where the model is making errors. The matrix is particularly useful for binary and multi-class classification problems.</td></tr>
             </table>
-</li>
-<li>Introduction to machine learning tools and frameworks.
-    <ul>
-    <li>Core Workflow
-        <ol>
-        <li>Data Collection: Gather historical data that already contains the answers (e.g., historical stock prices, or thousands of medical scans marked "benign" or "malignant").</li>
-        <li>Feature Extraction: Decide which inputs ($x$) the model should look at to make its decision.</li>
-        <li>Training: Feed the training portion of the data to the algorithm so it can adjust its weights to minimize its prediction errors.</li>
-        <li>Evaluation: Test the trained model on a separate holdout dataset (the test set) using metrics like Accuracy, F1-Score, or RMSE to see how well it generalizes to the real world.</li>
-        </ol>
-    </li>
-    <li>Data Organization:
-        <ul>
-        <li>Training Set</li>
-        <li>Validation Set</li>
-        <li>Testing Set</li>
-        </ul>
-    </li>
+        </li>
+        <li>Introduction to machine learning tools and frameworks.
+            <ul>
+                <li>Core Workflow
+                    <ol>
+                        <li>Data Collection: Gather historical data that already contains the answers (e.g., historical stock prices, or thousands of medical scans marked "benign" or "malignant").</li>
+                        <li>Feature Extraction: Decide which inputs ($x$) the model should look at to make its decision.</li>
+                        <li>Training: Feed the training portion of the data to the algorithm so it can adjust its weights to minimize its prediction errors.</li>
+                        <li>Evaluation: Test the trained model on a separate holdout dataset (the test set) using metrics like Accuracy, <a href="https://www.geeksforgeeks.org/machine-learning/f1-score-in-machine-learning/">F1 Score</a>, or RMSE to see how well it generalizes to the real world.</li>
+                    </ol>
+                </li>
+                <li>Data Organization:
+                    <ul>
+                        <li>Training Set</li>
+                        <li>Validation Set</li>
+                        <li>Testing Set</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Key concepts in data preprocessing: cleaning, feature engineering, and handling missing values.</li>
+        <li>Setting up Python-based environments for ML: 
+            <ul>
+                <li>Jupyter Notebooks,</li>
+                <li><a href="https://colab.research.google.com/github/cs231n/cs231n.github.io/blob/master/python-colab.ipynb">Numpy</a>,</li>
+                <li><a href="https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/pandas_dataframe_ultraquick_tutorial.ipynb">Pandas</a>,</li>
+                <li><a href="https://colab.research.google.com/notebooks/charts.ipynb">Matplotlib</a>,</li>
+                <li>Scikit-Learn,</li> 
+                <li>and TensorFlow.</li>
+            </ul>
+        </li>
     </ul>
-</li>
-<li>Key concepts in data preprocessing: cleaning, feature engineering, and handling missing values.</li>
-<li>Setting up Python-based environments for ML: 
-    <ul>
-    <li>Jupyter Notebooks,</li>
-    <li>Numpy,</li>
-    <li>Pandas,</li>
-    <li>Matplotlib,</li>
-    <li>Scikit-Learn,</li> 
-    <li>and TensorFlow.</li>
-    </ul>
-    </li>
-</ul>
 </details>
 
 
@@ -498,13 +493,12 @@ This is an unsupervised machine learning technique used to discover interesting 
 
 
 ## Machine Learning Project Checklist ##
-
-![Machine Learning Checklist](./Machine-Learning-Checklist.png)
-
 <details>
 <summary>
 <blockquote>How do you get accurate results using machine learning (ML) problem after problem? The <strong>challenge</strong> is that each problem is unique, requiring different data sources, features, algorithms, algorithm configurations and so on. The <strong>solution</strong> is to use a checklist that guarantees a good result every time. ~  <a href="https://machinelearningmastery.com/machine-learning-checklist/">Jason Brownlee, MachineLearningMastery</a></blockquote>
 </summary>
+
+![Machine Learning Checklist](./Machine-Learning-Checklist.png)
 
 ### Each Data Problem is Different ###
 You have no idea what algorithm will work best on a problem before you start. Even expert data scientists cannot tell you. This problem is not limited to the selection of machine learning algorithms. You cannot know what data transforms and what features in the data that if exposed would best present the structure of the problem to the algorithms. You may have some ideas. You may also have some favorite techniques. But how do you know that the techniques that got you results last time will get you good results this time?
@@ -519,13 +513,11 @@ How are you supposed to know that you’ve finished working through a machine le
 ### How To Get Accurate Results Reliably ###
 You can get accurate results reliably on your machine learning problems. Firstly, it’s an empirical question. What algorithm? What attributes? You have to think up possibilities and try them out. You have to experiment to find answers to these questions. Treat each dataset like a search problem. Find a combination that gives good results. The amount of time you spend searching will be related to how good the results are. But there is an inflection point where you switch from making large gains to diminishing returns.
 
-Put another way, the selection of data preparation, data transforms, model selection, model tuning, ensemlbing and so on is a combinatorial problem. There are many combinations that work, there are even many combinations that are good enough. Often you don’t need the very best solution. In fact the very best solution may be what you don’t want. It can be expensive to find, it can be fragile to perturbations in the data and it may very likely be a product of over fitting.
+Put another way, the selection of data preparation, data transforms, model selection, model tuning, <a href="https://www.ibm.com/think/topics/ensemble-learning">ensembling</a> and so on is a combinatorial problem. There are many combinations that work, there are even many combinations that are good enough. Often you don’t need the very best solution. In fact the very best solution may be what you don’t want. It can be expensive to find, it can be fragile to perturbations in the data and it may very likely be a product of over fitting.
 
 You want a good solution, that is good enough for the specific needs of the problem that you are working on. Often a good enough solution is fast, cheap and robust. It’s an easier problem to solve. Also, if you think you need the very best solution, you can use a good enough solution as your first checkpoint. This simple reframing from “most accurate” to “accurate enough” result is how you can guarantee to get good results on each machine learning problem that you work on.
 
-You can use a checklist to structure your search for the right combination of elements to reliably deliver a good solution to any machine learning problem. A checklist is a simple tool that guarantees an outcome. They’re used all the time in empirical domains where the knowledge is hard won and a guaranteed outcome is very desirable.
-
-For example in aviation like taking off and the use of a pre-flight checklist. Also in medicine with surgical checklists and other fields such as safety compliance. If a result is important, why make up a process every time. Follow a well defined set of steps to a solution.
+You can use a <strong>checklist</strong> to structure your search for the right combination of elements to reliably deliver a good solution to any machine learning problem. A checklist is a simple tool that guarantees an outcome. They’re used all the time in empirical domains where the knowledge is hard won and a guaranteed outcome is very desirable.
 
 The 5 benefits of using a checklist to work through machine learning problems are:
 <ul>
@@ -545,156 +537,278 @@ This example checklist is highly constrained for brevity. In fact, think of it i
 Also, to keep it digestible, I have kept the level of abstraction reasonably high and limited most sections to three dot points. Sometimes that is not enough, so I have given specific examples of data transforms and algorithms to try in some parts of the checklist, referred to as interludes.
 
 <ol>
-<li>Define The Problem
-It is important to have a well developed understanding of the problem before touching any data or algorithms. This will give you the tools to interpret results and the vision for what form the solution will take.
-
-You can dive a little deeper into this part of the checklist in the post “How to Define Your Machine Learning Problem“.
-
-1.1 What is the problem?
+<li><h4>Define The Problem</h4>
+It is important to have a well developed understanding of the problem before touching any data or algorithms. This will give you the tools to interpret results and the vision for what form the solution will take. You can dive a little deeper into this part of the checklist in the post “How to Frame Your Machine Learning Problem“.
+<ol>
+<li><h5> What is the problem?</h5>
 This section is intended to capture a clear statement of the problem, as well as any expectations that may have been set and biases that may exist.
-
-Define the problem informally and formally.
-List the assumptions about the problem (e.g. about the data).
-List known problems similar to your problem.
-1.2 Why does the problem need to be solved?
+<ul>
+<li>Define the objective informally and formally (business terms).</li>
+<li>List the assumptions about the problem (e.g. about the data).</li>
+<li>List known problems similar to your problem.</li>
+<li>How will your solution be used?</li>
+<li>What are the current solutions/workarounds (if any)?</li>
+<li>How should you frame this problem (supervised/unsupervised, online/offline, etc.)?</li>
+<li>How should performance be measured?</li>
+<li>Is the performance measure aligned with the business objective?</li>
+<li>What would be the minimum performance needed to reach the business objectives?</li>
+<li>What are comparable problems? Can you reuse experience or tools?</li>
+<li>Is human expertise available?</li>
+</ul>
+</li>
+<li><h5>Why does the problem need to be solved?</h5>
 This section is intended to capture the motivation for solving the problem and force up-front thinking about the expected outcome.
-
-Describe the motivation for solving the problem.
-Describe the benefits of the solution (model or the predictions).
-Describe how the solution will be used.
-1.3 How could the problem be solved manually?
+<ul>
+<li>Describe the motivation for solving the problem.</li>
+<li>Describe the benefits of the solution (model or the predictions).</li>
+<li>Describe how the solution will be used.</li>
+</ul>
+</li>
+<li><h5>How could the problem be solved manually?</h5>
 This section is intended to flush out any remaining domain knowledge and help you gauge whether a machine learning solution is really required.
+<ul>
+<li>Describe how the problem is currently solved (if at all).</li>
+<li>Describe how a subject matter expert would make manual predictions.</li>
+<li>Describe how a programmer might hand code a classifier.</li>
+<li>List the assumptions you (or others) have made so far.</li>
+<li>Verify assumptions if possible.</li>
+</ul>
+</li>  
+</ol>
+</li>
+<li><h4>Prepare The Data</h4>
+Understanding your data is where you should spend most of your time. The better you understand your data, the better job that you can do to expose its inherent structure to the algorithms to learn. Dive deeper into this part of the checklist in the posts “How to Prepare Data For Machine Learning” and “Quick and Dirty Data Analysis for your Machine Learning Problem“.
 
-Describe how the problem is currently solved (if at all).
-Describe how a subject matter expert would make manual predictions.
-Describe how a programmer might hand code a classifier.
-</li><li>Prepare The Data
-Understanding your data is where you should spend most of your time.
-
-The better you understand your data, the better job that you can do to expose its inherent structure to the algorithms to learn.
-
-Dive deeper into this part of the checklist in the posts “How to Prepare Data For Machine Learning” and “Quick and Dirty Data Analysis for your Machine Learning Problem“.
-
-2.1 Data Description
+Note: Work on copies of the data (keep the original dataset intact).
+<ol>
+<li><h5> Get the Data</h5>
+Note: automate as much as possible so you can easily get fresh data and try to get insights from a field expert for these steps.
+<ul>
+<li>List the data you need and how much you need.</li>
+<li>Find and document where you can get that data.</li>
+<li>Check how much space it will take.</li>
+<li>Check legal obligations, and get authorization if necessary.</li>
+<li>Get access authorizations.</li>
+<li>Create a workspace (with enough storage space).</li>
+<li>Get the data.</li>
+<li>Create a copy of the data for exploration (sampling it down to a manageable size if necessary).</li>
+<li>Convert the data to a format you can easily manipulate (without changing the data itself).</li>
+<li>Create a Jupyter notebook to keep a record of your data exploration.</li>
+<li>Study each attribute and its characteristics:
+<ul>
+<li>Name</li>
+<li>Type (categorical, int/float, bounded/unbounded, text, structured, etc.)</li>
+<li>% of missing values</li>
+<li>Noisiness and type of noise (stochastic, outliers, rounding errors, etc.)</li>
+<li>Usefulness for the task</li>
+<li>Type of distribution (Gaussian, uniform, logarithmic, etc.)</li>
+</ul>
+</li>
+<li>Ensure sensitive information is deleted or protected (e.g., anonymized).</li>
+<li>Check the size and type of data (time series, sample, geographical, etc.).</li>
+<li>Create a test set, put it aside, and never look at it (no data snooping!).</li>
+<li>For supervised learning tasks, identify the target attribute(s).</li>
+<li>Visualize the data.</li>
+<li>Study the correlations between attributes.</li>
+<li>Study how you would solve the problem manually.</li>
+<li>Identify the promising transformations you may want to apply.</li>
+<li>Identify extra data that would be useful</li>
+<li>Document what you have learned.</li>
+</ul>
+</li>
+<li><h5>Data Description</h5>
 This section is intended to force you to think about all of the data that is and is not available.
-
-Describe the extent of the data that is available.
-Describe data that is not available but is desirable.
-Describe the data that is available that you don’t need.
-2.2 Data Preprocessing
+<ul>
+<li>Describe the extent of the data that is available.</li>
+<li>Describe data that is not available but is desirable.</li>
+<li>Describe the data that is available that you don’t need.</li>
+</ul>
+</li>
+<li><h5>Data Preprocessing</h5>
 This section is intended to organize the raw data into a form that you can work with in your modeling tools.
-
-Format data so that it is in a form that you can work with.
-Clean the data so that it is uniform and consistent.
-Sample the data in order to best trade-off redundancy and problem fidelity.
-Interlude: Shortlist of Data Sampling
-There might be a lot to unpack in the final check on sampling.
-
+<ul>
+<li>Format data so that it is in a form that you can work with.</li>
+<li>Clean the data so that it is uniform and consistent.
+<ul>
+<li>Fix or remove outliers (optional).</li>
+<li>Fill in missing values (e.g., with zero, mean, median…) or drop their rows (or columns).</li>
+</ul>
+</li>
+<li>Sample the data in order to best trade-off redundancy and problem fidelity.</li>
+<li>Interlude: Shortlist of Data Sampling</li>
+<li>There might be a lot to unpack in the final check on sampling.</li>
+</ul>
 There are two important concerns here:
-
-Sample instances: Create a sample of the data that is both representative of the various attribute densities and small enough that you can build and evaluate models quickly. Often it’s not one sample, but many. For example, one for sub-minute model evaluation, one for sub-hour, one for sub-day and so on. More data can change the performance of algorithms.
-Sample attributes: Select attributes that best expose the structures in the data to the models. Different models have different requirements, really different preferences because sometimes breaking the “requirements” gives better results.
+<ul>
+<li>Sample instances: Create a sample of the data that is both representative of the various attribute densities and small enough that you can build and evaluate models quickly. Often it’s not one sample, but many. For example, one for sub-minute model evaluation, one for sub-hour, one for sub-day and so on. More data can change the performance of algorithms.</li>
+<li>Sample attributes: Select attributes that best expose the structures in the data to the models. Different models have different requirements, really different preferences because sometimes breaking the “requirements” gives better results.</li>
+</ul>
 Below are some ideas for different approaches that you can use to sample your data. Don’t choose, use each one in turn and let the results from your test harness tell you which representation to use.
+<ul>
+<li>Random or stratified samples</li>
+<li>Rebalance instances by class (more on rebalancing methods)</li>
+<li>Remove outliers (more on outlier methods)</li>
+<li>Remove highly correlated attributes</li>
+<li>Apply dimensionality reduction methods (principle components or t-SNE)</li>
+</ul>
+</li>
+<li><h5>Feature Selection (optional)</h5>
+Drop the attributes that provide no useful information for the task.
+</li>
+<li><h5>Data Transformation</h5>
+This section is intended to create multiple views on the data in order to expose more of the problem structure in the data to modeling algorithms in later steps. 
 
-Random or stratified samples
-Rebalance instances by class (more on rebalancing methods)
-Remove outliers (more on outlier methods)
-Remove highly correlated attributes
-Apply dimensionality reduction methods (principle components or t-SNE)
-2.3 Data Transformation
-This section is intended to create multiple views on the data in order to expose more of the problem structure in the data to modeling algorithms in later steps.
-
-Create linear and non-linear transformations of all attributes
-Decompose complex attributes into their constituent parts.
-Aggregate denormalized attributes into higher-order quantities.
-Interlude: Shortlist of Data Transformations
-There is an limited number of data transforms that you can use. There are also old favorites that you can use as a starting point to help tease out whether it is worth exploring specific avenues.
-
-Below is a list of some univariate (single attribute) data transforms you could use.
-
-Square and Cube
-Square root
-Standardize (e.g. 0 mean and unit variance)
-Normalize (e.g. rescale to 0-1)
-Descritize (e.g. convert a real to categorical)
+Note: Write functions for all data transformations you apply, for five reasons:
+<ol>
+<li>So you can easily prepare the data the next time you get a fresh dataset</li>
+<li>So you can apply these transformations in future projects</li>
+<li>To clean and prepare the test set</li>
+<li>To clean and prepare new data instances once your solution is live</li>
+<li>To make it easy to treat your preparation choices as hyperparameters</li>
+</ol>
+Steps to follow for data transformation:
+<ul>
+<li>Create linear and non-linear transformations of all attributes</li>
+<li>Decompose complex attributes into their constituent parts.</li>
+<li>Aggregate denormalized attributes into higher-order quantities.</li>
+</ul>
+<h6>Feature Engineering, where appropriate:</h6>
+There is an limited number of data transforms that you can use. There are also old favorites that you can use as a starting point to help tease out whether it is worth exploring specific avenues. Below is a list of some univariate (single attribute) data transforms you could use.
+<ul>
+<li>Square and Cube</li>
+<li>Square root</li>
+<li>Feature scaling: Standardize (e.g. 0 mean and unit variance)</li>
+<li>Feature scaling: Normalize (e.g. rescale to 0-1) features.</li>
+<li>Descritize (e.g. convert a real to categorical) (approximate) continuous features.</li>
+<li>Decompose features (e.g., categorical, date/time, etc.).</li>
+<li>Add promising transformations of features (e.g., log(x), sqrt(x), x 2 , etc.).</li>
+<li>Aggregate features into promising new features.</li>
+</ul>
 Which ones should you use? All of them in turn, again, let the results from your test harness inform you as to the best transformations for your problem.
-
-2.4 Data Summarization
+</li>
+<li><h5>Data Summarization</h5>
 This section is intended to flush out any obvious relationships in the data.
-
-Create univariate plots of each attribute.
-Create bivariate plots of each attribute with every other attribute.
-Create bivariate plots of each attribute with the class variable
-</li><li>Spot Check Algorithms
-Now it is time to start building and evaluating models.
-
-To dive deeper into this part of the checklist, see the posts “How to Evaluate Machine Learning Algorithms” and “Why you should be Spot-Checking Algorithms on your Machine Learning Problems“.
-
-3.1 Create Test Harness
+<ul>
+<li>Create univariate plots of each attribute.</li>
+<li>Create bivariate plots of each attribute with every other attribute.</li>
+<li>Create bivariate plots of each attribute with the class variable</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><h4>Spot Check Algorithms</h4>
+Now it is time to start building and evaluating models. To dive deeper into this part of the checklist, see the posts “How to Evaluate Machine Learning Algorithms” and “Why you should be Spot-Checking Algorithms on your Machine Learning Problems“.
+<ul>
+<li><h5>Create Test Harness</h5>
 This section is intended to help you define a robust method for model evaluation that can reliably be used to compare results.
-
-Create a hold-out validation dataset for use later.
-Evaluate and select an appropriate test option.
-Select one (or a small set) performance measure used to evaluate models.
-3.2 Evaluate Candidate Algorithms
+<ul>
+<li>Create a hold-out validation dataset for use later.</li>
+<li>Evaluate and select an appropriate test option.</li>
+<li>Select one (or a small set) performance measure used to evaluate models.</li>
+</ul>
+</li>
+<li><h5>Evaluate Candidate Algorithms</h5>
 This section is intended to flush quickly out how learnable the problem might be and which algorithms and views on the data may be good for further investigation in the next step.
-
-Select a diverse set of algorithms to evaluate (10-20).
-Use common or standard algorithm parameter configurations.
-Evaluate each algorithm on each prepared view of the data.
-Interlude: Shortlist Algorithms To Try on Classification Problems
-Frankly, the list does not matter as much as the strategy of spot checking and not going with your favorite algorithm.
-
-Nevertheless, if you’re working a classification problem throw in a good mix of algorithms that model the problem quite differently. For example:
-
-Instance-based like k-Nearest Neighbors and Learning Vector Quantization
-Simpler methods like Naive Bayes, Logistic Regression and Linear Discriminant Analysis
-Decision Trees like CART and C4.5/C5.0
-Complex non-linear approaches like Backpropagation and Support Vector Machines
-Always throw in random forest and gradient boosted machines
+<ul>
+<li>Select a diverse set of algorithms to evaluate (10-20).</li>
+<li>Use common or standard algorithm parameter configurations.</li>
+<li>Evaluate each algorithm on each prepared view of the data.</li>
+<li>Interlude: Shortlist Algorithms To Try on Classification Problems</li>
+</ul>
+Frankly, the list does not matter as much as the strategy of spot checking and not going with your favorite algorithm/ Nevertheless, if you’re working a classification problem throw in a good mix of algorithms that model the problem quite differently. For example:
+<ul>
+<li>Instance-based like k-Nearest Neighbors and Learning Vector Quantization</li>
+<li>Simpler methods like Naive Bayes, Logistic Regression and Linear Discriminant Analysis</li>
+<li>Decision Trees like CART and C4.5/C5.0</li>
+<li>Complex non-linear approaches like Backpropagation and Support Vector Machines</li>
+<li>Always throw in random forest and gradient boosted machines</li>
+</ul>
 To get ideas on algorithm to try, see the post “Tour of Machine Learning Algorithms”
 </li>
-<li>Improve Results
-At this point, you will have a smaller pool of models that are known to be effective on the problem. Now it is time to improve the results.
+</ul>
+</li>
+<li><h4>Improve Results</h4>
+At this point, you will have a smaller pool of models that are known to be effective on the problem. Now it is time to improve the results. You can dive deeper into this part of the checklist in the post “How to Improve Machine Learning Results“.
 
-You can dive deeper into this part of the checklist in the post “How to Improve Machine Learning Results“.
+Notes: You will want to use as much data as possible for this step, especially as you move toward the end of fine-tuning.
 
-4.1 Algorithm Tuning
+<ol>
+<li><h5>Algorithm Tuning</h5>
 This section is intended to get the most from well performing models.
-
-Use historically effective model parameters.
-Search the space of model parameters.
-Optimize well performing model parameters.
-4.2 Ensemble Methods
-This section is intended to combine the results from well performing models and give a further bump in accuracy.
-
-Use Bagging on well performing models.
-Use Boosting on well performing models.
-Blend the results of well performing models.
-4.3 Model Selection
+<ul>
+<li>Use historically effective model parameters.</li>
+<li>Search the space of model parameters.</li>
+<li>Optimize well performing model parameters.</li>
+<li>Fine-tune the hyperparameters using cross-validation:
+<ul>
+<li>Treat your data transformation choices as hyperparameters, especially when you are not sure about them (e.g., if you’re not sure whether to replace missing values with zeros or with the median value, or to just drop the rows).</li>
+<li>Unless there are very few hyperparameter values to explore, prefer random search over grid search. If training is very long, you may prefer a Bayesian optimization approach (e.g., using Gaussian process priors, as described by Jasper Snoek et al.)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5>nsemble Methods</h5>
+Try Ensemble methods. This section is intended to combine the results from well performing models and give a further bump in accuracy: produce better performance than running them individually.
+<ul>
+<li>Use Bagging on well performing models.</li>
+<li>Use Boosting on well performing models.</li>
+<li>Blend the results of well performing models.</li>
+<ul>
+</li>
+<li><h5>Model Selection</h5>
 This section is intended ensure the process of model selection is well considered.
 
-Select a diverse subset (5-10) of well performing models or model configurations.
-Evaluate well performing models on a hold out validation dataset.
-Select a small pool (1-3) of well performing models.
-</li><li>Finalize Project
+Note: If the data is huge, you may want to sample smaller training sets so you can train many different models in a reasonable time (be aware that this penalizes complex models such as large neural nets or Random Forests).
+<ul>
+<li>Select a diverse subset (5-10) of well performing models rom different categories (e.g., linear, naive Bayes, SVM, Random Forest, neural net, etc.) or model configurations and train using standard parameters.</li>
+<li>Measure and compare their performance.: for each model, use N-fold cross-validation and compute the mean and standard deviation of the performance measure on the N folds.</li>
+<li>Evaluate well performing models on a hold out validation dataset.</li>
+<li>Perform a quick round of feature selection and engineering.</li>
+<li>Analyze the most significant variables for each algorithm.</li>
+<li>Perform one or two more quick iterations of the five previous steps.</li>
+<li>Analyze the types of errors the models make. What data would a human have used to avoid these errors?</li>
+<li>Shortlist the top three to five most promising models</li>
+<li>Select a small pool (1-3) of well performing models, preferring models that make different types of errors.</li>
+<li>Once you are confident about your final model, measure its performance on the test set to estimate the generalization error. Don’t tweak your model after measuring the generalization error: you would just start overfitting the test set.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><h4>Finalize Project</h4>
 We now have results, look back to the problem definition and remind yourself how to make good use of them.
 
-You can dive deeper into this part of the checklist in the post “How to Use Machine Learning Results“.
-
-5.1 Present Results
-This section is intended to ensure you capture what you did and learned so that others (and your future self) can make best use of it
-
-Write up project in a short report (1-5 pages).
-Convert write-up to a slide deck to share findings with others.
-Share code and results with interested parties.
-5.2 Operationalize Results
+<ol>
+<li><h5>Present Your Solution</h5>
+This section is intended to ensure you capture what you did and learned so that others (and your future self) can make best use of it.
+<ul>
+<li>Document what you have done.</li>
+<li>Write up project in a short report (1-5 pages).</li>
+<li>Create a nice presentation: Convert write-up to a slide deck to share findings with others.</li>
+<li> Make sure you highlight the big picture first.</li>
+<li>Explain why your solution achieves the business objective.</li>
+<li>Don’t forget to present interesting points you noticed along the way.</li>
+<li>Describe what worked and what did not.</li>
+<li>List your assumptions and your system’s limitations.</li>
+<li>Ensure your key findings are communicated through beautiful visualizations or easy-to-remember statements (e.g., “the median income is the number-one predictor of housing prices”).</li>
+<li>Share code and results with interested parties.</li>
+</ul>
+</li>
+<li><h5>Operationalize Results</h5>
 This section is intended to ensure that you deliver on the solution promise made up front.
-
-Adapt the discovered procedure from raw data to result to an operational setting.
-Deliver and make use of the predictions.
-Deliver and make use of the predictive model.
-</li></ol>
+<ul>
+<li>Get your solution ready for production. Adapt the discovered procedure from raw data to result to an operational setting. Plug into production data inputs, write unit tests, etc..</li>
+<li>Write monitoring code to check your system’s live performance at regular intervals and trigger alerts when it drops.</li>
+<li>Deliver and make use of the predictions.</li>
+<li>Deliver and make use of the predictive model.</li>
+<li>Beware of slow degradation: models tend to “rot” as data evolves.</li>
+<li>Measuring performance may require a human pipeline (e.g., via a crowdsourcing service).</li>
+<li>Also monitor your inputs’ quality (e.g., a malfunctioning sensor sending random values, or another team’s output becoming stale). This is particularly important for online learning systems.</li>
+<li>Retrain your models on a regular basis on fresh data (automate as much as possible).</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
 
 
 ### Tips For Getting The Most From This Checklist ###
@@ -780,10 +894,7 @@ Share your first project (in the comments).</blockquote>
 * Google Colab
     * [Colab Primer](https://colab.research.google.com/github/google/picatrix/blob/main/notebooks/Quick_Primer_on_Colab_Jupyter.ipynb)
     * [Mount from Google Drive](https://colab.research.google.com/notebooks/snippets/accessing_files.ipynb#scrollTo=s6nDq8Nk7aPN)
-    * [Python/Numpy Review](https://colab.research.google.com/github/cs231n/cs231n.github.io/blob/master/python-colab.ipynb)
     * [Advanced Python Tutorial](https://colab.research.google.com/drive/1gCqFEquqNvEoTDX3SNhR2PZkXWPHKXnc?usp=sharing)
-    * [Pandas Data Frame](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/pandas_dataframe_ultraquick_tutorial.ipynb)
-    * [Google Colab Charts](https://colab.research.google.com/notebooks/charts.ipynb)
 * [Learning Data Science (LDS)](https://github.com/phume03/LDS-textbook)
   * [Alternative link to LDS](https://learningds.org/)
 * [Advanced Python Working with Data Git Repo](https://github.com/LinkedInLearning/advanced-python-working-with-data-4312001)
@@ -795,24 +906,16 @@ Share your first project (in the comments).</blockquote>
   * [List of OECD Member states](https://www.cbs.nl/en-gb/news/2024/42/netherlands-lags-behind-other-oecd-countries-on-labour-productivity-gains/oecd-countries)
   * [OECD countries](https://www.oecd.org/en/countries.html)
 * Ensemble Learning Techniques
-  * [Ensemble Learning IBM Definition](https://www.ibm.com/think/topics/ensemble-learning)
   * [Guide to Ensemble Learning | Geeks for Geeks](https://www.geeksforgeeks.org/machine-learning/a-comprehensive-guide-to-ensemble-learning/)
   * [Guide to Ensemble Learning | Sci-kit Learn](https://scikit-learn.org/stable/modules/ensemble.html)
   * [Advanced Ensemble Techniques](https://colab.research.google.com/github/sushily1997/Machine_Learning/blob/main/ML_15_Advanced_Ensemble_Techniques(Stacking).ipynb/)
   * [Ensemble Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/types-of-ensemble-learning/)
-* [Guide to Ensemble Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/a-comprehensive-guide-to-ensemble-learning/)
+  * [Guide to Ensemble Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/a-comprehensive-guide-to-ensemble-learning/)
 * [Data.org Financial Health Prediction Challenge | Zindi.Africa](https://zindi.africa/competitions/dataorg-financial-health-prediction-challenge)
-* [F1 Score in Machine Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/f1-score-in-machine-learning/)
 * [Precision and Recall in Machine Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/precision-and-recall-in-machine-learning/)
 * [XGBoost | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/xgboost/)
 * [XGBoost Multiclass Classification | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/xgboost-multiclass-classification/)
-* [Decision Tree in Machine Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/decision-tree-introduction-example/)
-* [Logistic Regression in Machine Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/understanding-logistic-regression/)
 * [LightGBM (Light Gradient Boosting Machine) | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/lightgbm-light-gradient-boosting-machine/)
-* [Logistic Regression in Machine Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/understanding-logistic-regression/)
 * [ITU UN. Human Development Index (HDI)](https://hdr.undp.org/data-center/human-development-index#/indicies/HDI)
 * [Hands-On Machine Learning with Scikit-Learn, Kera, and TensorFlow](https://archive.org/details/handsonmachinele0000gron)
-* [Huawei AI Academy Training Materials: Machine Learning](https://www.scribd.com/document/558545481/03-Machine-Learning)
-* [Huawei AI Academy Training Material: Deep Learning](https://www.scribd.com/document/510580299/Deep-Learning)
 * [Huawei AI Academy Training Materials. Python Basics](https://www.studocu.com/row/document/jamaaة-kfr-alshykh/artificial-intelligence/2-chapter-7-python-programming-basics-experimental-guide/21954723)
-* [Deep Learning](https://www.deeplearningbook.org)
