@@ -504,6 +504,7 @@ This is an unsupervised machine learning technique used to discover interesting 
 <details>
 <summary>
 <blockquote>How do you get accurate results using machine learning (ML) problem after problem? The <strong>challenge</strong> is that each problem is unique, requiring different data sources, features, algorithms, algorithm configurations and so on. The <strong>solution</strong> is to use a checklist that guarantees a good result every time. ~  <a href="https://machinelearningmastery.com/machine-learning-checklist/">Jason Brownlee, MachineLearningMastery</a></blockquote>
+</summary>
 
 ### Each Data Problem is Different ###
 You have no idea what algorithm will work best on a problem before you start. Even expert data scientists cannot tell you. This problem is not limited to the selection of machine learning algorithms. You cannot know what data transforms and what features in the data that if exposed would best present the structure of the problem to the algorithms. You may have some ideas. You may also have some favorite techniques. But how do you know that the techniques that got you results last time will get you good results this time?
@@ -522,12 +523,10 @@ Put another way, the selection of data preparation, data transforms, model selec
 
 You want a good solution, that is good enough for the specific needs of the problem that you are working on. Often a good enough solution is fast, cheap and robust. It’s an easier problem to solve. Also, if you think you need the very best solution, you can use a good enough solution as your first checkpoint. This simple reframing from “most accurate” to “accurate enough” result is how you can guarantee to get good results on each machine learning problem that you work on.
 
-### You Need a Machine Learning Checklist ###
 You can use a checklist to structure your search for the right combination of elements to reliably deliver a good solution to any machine learning problem. A checklist is a simple tool that guarantees an outcome. They’re used all the time in empirical domains where the knowledge is hard won and a guaranteed outcome is very desirable.
 
 For example in aviation like taking off and the use of a pre-flight checklist. Also in medicine with surgical checklists and other fields such as safety compliance. If a result is important, why make up a process every time. Follow a well defined set of steps to a solution.
 
-### Benefits of a Machine Learning Checklist ###
 The 5 benefits of using a checklist to work through machine learning problems are:
 <ul>
     <li>Less Work: You don’t have to think up all of the techniques to try on each new problem.</li>
@@ -772,19 +771,19 @@ Use the checklist to complete a project and build some confidence.
 Pick a problem that you can complete in 1-to-2 hours.
 Use the checklist and get a result.
 Share your first project (in the comments).</blockquote>
-</summary>
+
 
 </details>
 
 
 ## Resources ##
-
-* [Colab Primer](https://colab.research.google.com/github/google/picatrix/blob/main/notebooks/Quick_Primer_on_Colab_Jupyter.ipynb)
-* [Mount from Google Drive](https://colab.research.google.com/notebooks/snippets/accessing_files.ipynb#scrollTo=s6nDq8Nk7aPN)
-* [Python/Numpy Review](https://colab.research.google.com/github/cs231n/cs231n.github.io/blob/master/python-colab.ipynb)
-* [Advanced Python Tutorial](https://colab.research.google.com/drive/1gCqFEquqNvEoTDX3SNhR2PZkXWPHKXnc?usp=sharing)
-* [Pandas Data Frame](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/pandas_dataframe_ultraquick_tutorial.ipynb)
-* [Google Colab Charts](https://colab.research.google.com/notebooks/charts.ipynb)
+* Google Colab
+    * [Colab Primer](https://colab.research.google.com/github/google/picatrix/blob/main/notebooks/Quick_Primer_on_Colab_Jupyter.ipynb)
+    * [Mount from Google Drive](https://colab.research.google.com/notebooks/snippets/accessing_files.ipynb#scrollTo=s6nDq8Nk7aPN)
+    * [Python/Numpy Review](https://colab.research.google.com/github/cs231n/cs231n.github.io/blob/master/python-colab.ipynb)
+    * [Advanced Python Tutorial](https://colab.research.google.com/drive/1gCqFEquqNvEoTDX3SNhR2PZkXWPHKXnc?usp=sharing)
+    * [Pandas Data Frame](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/pandas_dataframe_ultraquick_tutorial.ipynb)
+    * [Google Colab Charts](https://colab.research.google.com/notebooks/charts.ipynb)
 * [Learning Data Science (LDS)](https://github.com/phume03/LDS-textbook)
   * [Alternative link to LDS](https://learningds.org/)
 * [Advanced Python Working with Data Git Repo](https://github.com/LinkedInLearning/advanced-python-working-with-data-4312001)
@@ -794,12 +793,14 @@ Share your first project (in the comments).</blockquote>
 * OECD Member States:
   * [UN Data on Human Development Index](https://hdr.undp.org/data-center/human-development-index#/indicies/HDI)
   * [List of OECD Member states](https://www.cbs.nl/en-gb/news/2024/42/netherlands-lags-behind-other-oecd-countries-on-labour-productivity-gains/oecd-countries)
+  * [OECD countries](https://www.oecd.org/en/countries.html)
 * Ensemble Learning Techniques
   * [Ensemble Learning IBM Definition](https://www.ibm.com/think/topics/ensemble-learning)
   * [Guide to Ensemble Learning | Geeks for Geeks](https://www.geeksforgeeks.org/machine-learning/a-comprehensive-guide-to-ensemble-learning/)
   * [Guide to Ensemble Learning | Sci-kit Learn](https://scikit-learn.org/stable/modules/ensemble.html)
   * [Advanced Ensemble Techniques](https://colab.research.google.com/github/sushily1997/Machine_Learning/blob/main/ML_15_Advanced_Ensemble_Techniques(Stacking).ipynb/)
-
+  * [Ensemble Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/types-of-ensemble-learning/)
+* [Guide to Ensemble Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/a-comprehensive-guide-to-ensemble-learning/)
 * [Data.org Financial Health Prediction Challenge | Zindi.Africa](https://zindi.africa/competitions/dataorg-financial-health-prediction-challenge)
 * [F1 Score in Machine Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/f1-score-in-machine-learning/)
 * [Precision and Recall in Machine Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/precision-and-recall-in-machine-learning/)
@@ -809,15 +810,9 @@ Share your first project (in the comments).</blockquote>
 * [Logistic Regression in Machine Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/understanding-logistic-regression/)
 * [LightGBM (Light Gradient Boosting Machine) | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/lightgbm-light-gradient-boosting-machine/)
 * [Logistic Regression in Machine Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/understanding-logistic-regression/)
-* [Ensemble Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/types-of-ensemble-learning/)
-* [Guide to Ensemble Learning | GeeksforGeeks](https://www.geeksforgeeks.org/machine-learning/a-comprehensive-guide-to-ensemble-learning/)
-* ITU UN. Human Development Index (HDI). UNDP, 2026. Web. 2 May 2026
-* [What is Ensemble Learning?](https://www.ibm.com/think/topics/ensemble-learning)
-* [Scikit Learn. Ensembles: Gradient boosting, random forests, bagging, voting, stacking](https://scikit-learn.org/stable/modules/ensemble.html)
-* [OECD countries](https://www.oecd.org/en/countries.html)
+* [ITU UN. Human Development Index (HDI)](https://hdr.undp.org/data-center/human-development-index#/indicies/HDI)
 * [Hands-On Machine Learning with Scikit-Learn, Kera, and TensorFlow](https://archive.org/details/handsonmachinele0000gron)
 * [Huawei AI Academy Training Materials: Machine Learning](https://www.scribd.com/document/558545481/03-Machine-Learning)
 * [Huawei AI Academy Training Material: Deep Learning](https://www.scribd.com/document/510580299/Deep-Learning)
 * [Huawei AI Academy Training Materials. Python Basics](https://www.studocu.com/row/document/jamaaة-kfr-alshykh/artificial-intelligence/2-chapter-7-python-programming-basics-experimental-guide/21954723)
-* [Learning Data Science: Data Wrangling, Exploration, Visualization, and Modeling with Python](https://learningds.org/intro.html)
 * [Deep Learning](https://www.deeplearningbook.org)
