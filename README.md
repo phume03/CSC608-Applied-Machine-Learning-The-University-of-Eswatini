@@ -536,7 +536,7 @@ This example checklist is highly constrained for brevity. In fact, think of it i
 
 Also, to keep it digestible, I have kept the level of abstraction reasonably high and limited most sections to three dot points. Sometimes that is not enough, so I have given specific examples of data transforms and algorithms to try in some parts of the checklist, referred to as interludes.
 
-<ol>
+<ol style="background-color: #eee; padding: 10px;">
 <li><h4>Define The Problem</h4>
 It is important to have a well developed understanding of the problem before touching any data or algorithms. This will give you the tools to interpret results and the vision for what form the solution will take. You can dive a little deeper into this part of the checklist in the post “How to Frame Your Machine Learning Problem“.
 <ol>
