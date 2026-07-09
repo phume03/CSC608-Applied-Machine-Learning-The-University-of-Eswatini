@@ -1,4 +1,7 @@
 # Applied Machine Learning #
+
+![ML: Human Head Internals as a Computer Components](./MachineLearningExplainer-crSonOfAlan-Lede.webp)
+
 In this course we were presented with a dive into [_practical applications_ of *machine learning (ML)*](https://www.geeksforgeeks.org/machine-learning/applications-of-machine-learning/) in modern organizations and society. The tentative topic schedule was:
     <ul>
         <li>[ML Theory and Methods](https://www.sciencedirect.com/topics/computer-science/machine-learning-theory)</li>
@@ -14,7 +17,7 @@ In this course we were presented with a dive into [_practical applications_ of *
         <li>Unsupervised clustering methods (e.g., k-Means, Gaussian Mixture Models, Hierarchical Clustering)</li>
     </ul>
 
-![ML: Human Head Internals as a Computer Components](./MachineLearningExplainer-crSonOfAlan-Lede.webp)
+I created notes in the following order for exam study and to complete the two course project(s): 
 
 <ul>
   <li><a href="https://github.com/phume03/CSC608-Applied-Machine-Learning-The-University-of-Eswatini/wiki/What-Is-Machine-Learning%3F">What Is Machine Learning?</a></li>
@@ -31,7 +34,7 @@ In this course we were presented with a dive into [_practical applications_ of *
       <li><a href="https://github.com/phume03/CSC608-Applied-Machine-Learning-The-University-of-Eswatini/wiki/Ethical-Considerations-and-Fairness-in-ML">Ethical Considerations and Fairness in ML</a></li> 
     </ul>
   </li>
-  <li>Projects
+  <li><a href="https://github.com/phume03/CSC608-Applied-Machine-Learning-The-University-of-Eswatini/wiki/Course-Projects">Projects</a>
     <ul>
       <li><a href="https://github.com/phume03/CSC608-Applied-Machine-Learning-The-University-of-Eswatini/wiki/Machine-Learning-Project-Checklist">Machine Learning Project Checklist</a></li>
       <li><a href="https://github.com/phume03/CSC608-Applied-Machine-Learning-The-University-of-Eswatini/wiki/Project-1">Project 1</a></li>
